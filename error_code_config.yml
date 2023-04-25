@@ -1,0 +1,5 @@
+error-tags:
+  SCJ:
+    packages:
+      - com.exasol.spark.common
+    highest-index: 2
