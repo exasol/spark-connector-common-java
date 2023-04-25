@@ -15,14 +15,14 @@ class ColumnDescriptionTest {
     void testValidateNameThrowsExceptionOnMissingColumnName() {
         final ColumnDescription.Builder builder = ColumnDescription.builder().type(-1);
         final IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> builder.build());
-        assertThat(exception.getMessage(), startsWith("E-SCJ-1"));
+        assertThat(exception.getMessage(), startsWith("E-SCCJ-1"));
     }
 
     @Test
     void testValidateTypeThrowsExceptionOnMissingColumnType() {
         final ColumnDescription.Builder builder = ColumnDescription.builder().name("c1");
         final IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> builder.build());
-        assertThat(exception.getMessage(), startsWith("E-SCJ-2"));
+        assertThat(exception.getMessage(), startsWith("E-SCCJ-2"));
     }
 
     @Test

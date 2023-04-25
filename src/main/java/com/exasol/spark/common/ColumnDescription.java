@@ -110,11 +110,7 @@ public class ColumnDescription {
         /**
          * Sets the column type.
          *
-<<<<<<< HEAD
-         * Type is of a {@link java.sql.Types} {@code JDBC} types.
-=======
          * Type is one of the {@code JDBC} data types defined in {@link java.sql.Types}.
->>>>>>> main
          *
          * @param type column type
          * @return builder instance for fluent programming
@@ -180,12 +176,12 @@ public class ColumnDescription {
 
         private void validate() {
             if (this.name == null) {
-                throw new IllegalArgumentException(ExaError.messageBuilder("E-SCJ-1")
+                throw new IllegalArgumentException(ExaError.messageBuilder("E-SCCJ-1")
                         .message("Failed to build the column description because column name is missing.")
                         .mitigation("Please set the column name when building column description.").toString());
             }
             if (this.type == null) {
-                throw new IllegalArgumentException(ExaError.messageBuilder("E-SCJ-2")
+                throw new IllegalArgumentException(ExaError.messageBuilder("E-SCCJ-2")
                         .message("Failed to build the column description because column type is missing.")
                         .mitigation("Please set the column type for column {{name}}.", this.name).toString());
             }
