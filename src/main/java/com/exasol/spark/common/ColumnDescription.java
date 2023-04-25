@@ -110,7 +110,11 @@ public class ColumnDescription {
         /**
          * Sets the column type.
          *
+<<<<<<< HEAD
          * Type is of a {@link java.sql.Types} {@code JDBC} types.
+=======
+         * Type is one of the {@code JDBC} data types defined in {@link java.sql.Types}.
+>>>>>>> main
          *
          * @param type column type
          * @return builder instance for fluent programming
@@ -156,7 +160,7 @@ public class ColumnDescription {
         /**
          * Sets the boolean for nullable columns.
          *
-         * @param isNullable boolean indicating if a column nullable or not
+         * @param isNullable boolean indicating if a column is allowed to contain a {@code null} value or not
          * @return builder instance for fluent programming
          */
         public Builder isNullable(final boolean isNullable) {

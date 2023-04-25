@@ -11,16 +11,15 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import org.junit.jupiter.api.Test;
 
 class ColumnDescriptionTest {
-
     @Test
-    void testValidateName() {
+    void testValidateNameThrowsExceptionOnMissingColumnName() {
         final ColumnDescription.Builder builder = ColumnDescription.builder().type(-1);
         final IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> builder.build());
         assertThat(exception.getMessage(), startsWith("E-SCJ-1"));
     }
 
     @Test
-    void testValidateType() {
+    void testValidateTypeThrowsExceptionOnMissingColumnType() {
         final ColumnDescription.Builder builder = ColumnDescription.builder().name("c1");
         final IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> builder.build());
         assertThat(exception.getMessage(), startsWith("E-SCJ-2"));

@@ -27,9 +27,13 @@ This is a common library for Exasol Apache Spark based connectors.
 
 ## Usage
 
-For example, to create column descriptions from `JDBC` query result:
+Create column descriptions from `JDBC` query result:
 
 ```java
+import static java.sql.ResultSetMetaData.columnNoNulls;
+import java.sql.*;
+import org.apache.spark.sql.types.StructType;
+
 final ResultSetMetaData metadata = jdbcQueryResultSet.getMetaData();
 final int numberOfColumns = metadata.getColumnCount();
 final List<ColumnDescription> columns = new ArrayList<>(numberOfColumns);
@@ -42,10 +46,9 @@ for (int i = 1; i <= numberOfColumns; i++) {
             .isSigned(metadata.isSigned(i)) //
             .isNullable(metadata.isNullable(i) != columnNoNulls) //
             .build());
-
 }
 ```
-And then to generate Spark schema from column descriptions:
+Generate Spark schema from column descriptions:
 
 ```java
 final StructType schema = new SchemaConverter().convert(columns);
