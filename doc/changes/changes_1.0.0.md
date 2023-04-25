@@ -6,7 +6,7 @@ Code name:
 
 ## Features
 
-* ISSUE_NUMBER: description
+* #2: Added column description helper class
 
 ## Dependency Updates
 

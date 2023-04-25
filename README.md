@@ -21,7 +21,7 @@ This is a common library for Exasol Apache Spark based connectors.
 
 ## Features
 
-- Describes `JDBC` column metadata
+- Provides a helper class to describe `JDBC` column metadata
 - Converts Exasol query column descriptions into a Spark schema
 - Generates Exasol import and export queries of cloud storage systems
 
