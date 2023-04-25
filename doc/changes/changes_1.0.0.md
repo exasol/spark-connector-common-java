@@ -6,6 +6,7 @@ Code name:
 
 ## Features
 
+* #1: Added Exasol data types to the Spark schema conversion
 * #2: Added column description helper class
 
 ## Dependency Updates
@@ -15,6 +16,8 @@ Code name:
 * Added `com.exasol:error-reporting-java8:1.0.1`
 * Added `com.exasol:exasol-jdbc:7.1.19`
 * Added `com.exasol:sql-statement-builder-java8:4.5.4`
+* Added `org.apache.spark:spark-sql_2.13:3.4.0`
+* Added `org.scala-lang:scala-library:2.13.10`
 
 ### Test Dependency Updates
 
