@@ -25,6 +25,7 @@ Code name:
 * Added `com.exasol:hamcrest-resultset-matcher:1.6.0`
 * Added `com.exasol:java-util-logging-testing:2.0.3`
 * Added `com.exasol:test-db-builder-java:3.4.2`
+* Added `com.fasterxml.jackson.core:jackson-core:2.15.0`
 * Added `nl.jqno.equalsverifier:equalsverifier:3.14.1`
 * Added `org.hamcrest:hamcrest:2.2`
 * Added `org.junit.jupiter:junit-jupiter-api:5.9.2`
