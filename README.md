@@ -30,6 +30,10 @@ This is a common library for Exasol Apache Spark based connectors.
 Create column descriptions from `JDBC` query result:
 
 ```java
+import static java.sql.ResultSetMetaData.columnNoNulls;
+import java.sql.*;
+import org.apache.spark.sql.types.StructType;
+
 final ResultSetMetaData metadata = jdbcQueryResultSet.getMetaData();
 final int numberOfColumns = metadata.getColumnCount();
 final List<ColumnDescription> columns = new ArrayList<>(numberOfColumns);
