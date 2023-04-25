@@ -26,8 +26,6 @@ Code name:
 * Added `com.exasol:java-util-logging-testing:2.0.3`
 * Added `com.exasol:test-db-builder-java:3.4.2`
 * Added `nl.jqno.equalsverifier:equalsverifier:3.14.1`
-* Added `org.apache.logging.log4j:log4j-api:2.20.0`
-* Added `org.apache.logging.log4j:log4j-core:2.20.0`
 * Added `org.hamcrest:hamcrest:2.2`
 * Added `org.junit.jupiter:junit-jupiter-api:5.9.2`
 * Added `org.junit.jupiter:junit-jupiter:5.9.2`
