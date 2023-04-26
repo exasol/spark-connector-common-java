@@ -26,7 +26,7 @@ public final class SchemaConverter {
     public StructType convert(final List<ColumnDescription> columns) {
         if (columns == null || columns.isEmpty()) {
             throw new IllegalArgumentException(ExaError.messageBuilder("E-SCCJ-3")
-                    .message("Provided list of column descriptions are empty or null.")
+                    .message("Provided list of column descriptions is empty or null.")
                     .mitigation("Please make sure that table or query has column definitions.").toString());
         }
         final List<StructField> fields = columns.stream().map(this::convertColumn).collect(Collectors.toList());
@@ -97,7 +97,6 @@ public final class SchemaConverter {
                             + "maximum Spark decimal precision {{sparkPrecision}}.") //
                     .parameter("exasolPrecision", precision) //
                     .parameter("sparkPrecision", DecimalType.MAX_PRECISION()) //
-                    .ticketMitigation() //
                     .toString());
         }
         if (scale > DecimalType.MAX_SCALE()) {
@@ -106,7 +105,6 @@ public final class SchemaConverter {
                             + "maximum Spark decimal scale {{sparkScale}}.") //
                     .parameter("exasolScale", scale) //
                     .parameter("sparkScale", DecimalType.MAX_SCALE()) //
-                    .ticketMitigation() //
                     .toString());
         }
         return DataTypes.createDecimalType(precision, scale);
