@@ -25,7 +25,7 @@ class SchemaConverterTest {
     void testConvertNullAndEmptyThrows(final List<ColumnDescription> columns) {
         final IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> schemaConverter.convert(columns));
-        assertThat(exception.getMessage(), startsWith("E-SCCJ-3: Provided list of column descriptions are empty"));
+        assertThat(exception.getMessage(), startsWith("E-SCCJ-3: Provided list of column descriptions is empty"));
     }
 
     @Test
