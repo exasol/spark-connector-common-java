@@ -28,8 +28,8 @@ Code name:
 * Added `com.fasterxml.jackson.core:jackson-core:2.15.0`
 * Added `nl.jqno.equalsverifier:equalsverifier:3.14.1`
 * Added `org.hamcrest:hamcrest:2.2`
-* Added `org.junit.jupiter:junit-jupiter-api:5.9.2`
-* Added `org.junit.jupiter:junit-jupiter:5.9.2`
+* Added `org.junit.jupiter:junit-jupiter-api:5.9.3`
+* Added `org.junit.jupiter:junit-jupiter:5.9.3`
 * Added `org.mockito:mockito-core:5.3.1`
 * Added `org.mockito:mockito-junit-jupiter:5.3.1`
 * Added `org.testcontainers:junit-jupiter:1.18.0`
@@ -43,6 +43,7 @@ Code name:
 * Added `org.apache.maven.plugins:maven-compiler-plugin:3.11.0`
 * Added `org.apache.maven.plugins:maven-deploy-plugin:3.1.1`
 * Added `org.apache.maven.plugins:maven-enforcer-plugin:3.3.0`
+* Added `org.apache.maven.plugins:maven-failsafe-plugin:3.0.0`
 * Added `org.apache.maven.plugins:maven-gpg-plugin:3.0.1`
 * Added `org.apache.maven.plugins:maven-install-plugin:2.4`
 * Added `org.apache.maven.plugins:maven-jar-plugin:2.4`
