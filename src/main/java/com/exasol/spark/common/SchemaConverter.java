@@ -13,7 +13,7 @@ import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
 
 /**
- * A class that converts JDBC {@link java.sql.ResultSet} result set into a Spark {@link StructType} schema.
+ * A class that converts list of {@link ColumnDescription}s into a Spark {@link StructType} schema.
  */
 public final class SchemaConverter {
 
