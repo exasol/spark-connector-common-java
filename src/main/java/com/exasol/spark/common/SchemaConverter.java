@@ -30,7 +30,7 @@ public final class SchemaConverter {
                     .mitigation("Please make sure that table or query has column definitions.").toString());
         }
         final List<StructField> fields = columns.stream().map(this::convertColumn).collect(Collectors.toList());
-        return new StructType(fields.toArray(new StructField[0]));
+        return new StructType(fields.stream().toArray(StructField[]::new));
     }
 
     /**
@@ -57,6 +57,14 @@ public final class SchemaConverter {
             return DataTypes.DoubleType;
         case Types.REAL:
             return DataTypes.FloatType;
+        // For {@code INTEGER} and {@code BIGINT} types we do different mapping
+        // depending on the {@code signedness} of the type.
+        //
+        // The main reason is to keep same for Spark JDBC dialects,
+        // https://github.com/apache/spark/blob/v3.4.0/sql/core/src/main/scala/org/apache/spark/sql/execution/datasources/jdbc/JdbcUtils.scala#L202
+        //
+        // Also this is not applicable to the Exasol datatypes, since {@code
+        // INTEGER} is alias for {@code DECIMAL(18,0)}, we would like to keep the defaults same.
         case Types.INTEGER:
             return column.isSigned() ? DataTypes.IntegerType : DataTypes.LongType;
         case Types.BIGINT:
@@ -93,16 +101,16 @@ public final class SchemaConverter {
     private DataType createDecimalDataType(int precision, int scale) {
         if (precision > DecimalType.MAX_PRECISION()) {
             throw new IllegalStateException(ExaError.messageBuilder("E-SCCJ-5") //
-                    .message("Exasol decimal precision {{exasolPrecision}} is larger than "
-                            + "maximum Spark decimal precision {{sparkPrecision}}.") //
+                    .message("Unsupported decimal precision value. The Exasol decimal precision {{exasolPrecision}} "
+                        + "is larger than maximum Spark decimal precision {{sparkPrecision}}.") //
                     .parameter("exasolPrecision", precision) //
                     .parameter("sparkPrecision", DecimalType.MAX_PRECISION()) //
                     .toString());
         }
         if (scale > DecimalType.MAX_SCALE()) {
             throw new IllegalStateException(ExaError.messageBuilder("E-SCCJ-6") //
-                    .message("Exasol decimal scale {{exasolScale}} is larger than "
-                            + "maximum Spark decimal scale {{sparkScale}}.") //
+                    .message("Unsupported decimal scale value. The Exasol decimal scale {{exasolScale}} "
+                        + "is larger than maximum Spark decimal scale {{sparkScale}}.") //
                     .parameter("exasolScale", scale) //
                     .parameter("sparkScale", DecimalType.MAX_SCALE()) //
                     .toString());
