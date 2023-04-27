@@ -6,6 +6,7 @@ Code name:
 
 ## Features
 
+* #1: Added Exasol data types to the Spark schema conversion
 * #2: Added column description helper class
 
 ## Dependency Updates
@@ -15,6 +16,8 @@ Code name:
 * Added `com.exasol:error-reporting-java8:1.0.1`
 * Added `com.exasol:exasol-jdbc:7.1.19`
 * Added `com.exasol:sql-statement-builder-java8:4.5.4`
+* Added `org.apache.spark:spark-sql_2.13:3.4.0`
+* Added `org.scala-lang:scala-library:2.13.10`
 
 ### Test Dependency Updates
 
@@ -22,12 +25,11 @@ Code name:
 * Added `com.exasol:hamcrest-resultset-matcher:1.6.0`
 * Added `com.exasol:java-util-logging-testing:2.0.3`
 * Added `com.exasol:test-db-builder-java:3.4.2`
+* Added `com.fasterxml.jackson.core:jackson-core:2.15.0`
 * Added `nl.jqno.equalsverifier:equalsverifier:3.14.1`
-* Added `org.apache.logging.log4j:log4j-api:2.20.0`
-* Added `org.apache.logging.log4j:log4j-core:2.20.0`
 * Added `org.hamcrest:hamcrest:2.2`
-* Added `org.junit.jupiter:junit-jupiter-api:5.9.2`
-* Added `org.junit.jupiter:junit-jupiter:5.9.2`
+* Added `org.junit.jupiter:junit-jupiter-api:5.9.3`
+* Added `org.junit.jupiter:junit-jupiter:5.9.3`
 * Added `org.mockito:mockito-core:5.3.1`
 * Added `org.mockito:mockito-junit-jupiter:5.3.1`
 * Added `org.testcontainers:junit-jupiter:1.18.0`
@@ -41,6 +43,7 @@ Code name:
 * Added `org.apache.maven.plugins:maven-compiler-plugin:3.11.0`
 * Added `org.apache.maven.plugins:maven-deploy-plugin:3.1.1`
 * Added `org.apache.maven.plugins:maven-enforcer-plugin:3.3.0`
+* Added `org.apache.maven.plugins:maven-failsafe-plugin:3.0.0`
 * Added `org.apache.maven.plugins:maven-gpg-plugin:3.0.1`
 * Added `org.apache.maven.plugins:maven-install-plugin:2.4`
 * Added `org.apache.maven.plugins:maven-jar-plugin:2.4`
