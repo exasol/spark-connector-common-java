@@ -8,6 +8,8 @@ Code name:
 
 * #1: Added Exasol data types to the Spark schema conversion
 * #2: Added column description helper class
+* #6: Added import query generator interface
+* #7: Added export query generator interface
 
 ## Dependency Updates
 
