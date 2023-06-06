@@ -1,8 +1,10 @@
 # Spark Connector Common Java 1.0.0, released 2023-06-06
 
-Code name:
+Code name: Initial Release
 
 ## Summary
+
+This is a initial release of the common library that provides helper classes for Exasol Spark based connectors.
 
 ## Features
 
@@ -11,31 +13,32 @@ Code name:
 * #4: Updated developer guide
 * #6: Added import query generator interface
 * #7: Added export query generator interface
+* #9: Moved options class from Spark connector
 
 ## Dependency Updates
 
 ### Compile Dependency Updates
 
 * Added `com.exasol:error-reporting-java8:1.0.1`
-* Added `com.exasol:exasol-jdbc:7.1.19`
+* Added `com.exasol:exasol-jdbc:7.1.20`
 * Added `com.exasol:sql-statement-builder-java8:4.5.4`
 * Added `org.apache.spark:spark-sql_2.13:3.4.0`
-* Added `org.scala-lang:scala-library:2.13.10`
+* Added `org.scala-lang:scala-library:2.13.11`
 
 ### Test Dependency Updates
 
-* Added `com.exasol:exasol-testcontainers:6.5.2`
+* Added `com.exasol:exasol-testcontainers:6.6.0`
 * Added `com.exasol:hamcrest-resultset-matcher:1.6.0`
 * Added `com.exasol:java-util-logging-testing:2.0.3`
 * Added `com.exasol:test-db-builder-java:3.4.2`
-* Added `com.fasterxml.jackson.core:jackson-core:2.15.0`
-* Added `nl.jqno.equalsverifier:equalsverifier:3.14.1`
+* Added `com.fasterxml.jackson.core:jackson-core:2.15.2`
+* Added `nl.jqno.equalsverifier:equalsverifier:3.14.2`
 * Added `org.hamcrest:hamcrest:2.2`
 * Added `org.junit.jupiter:junit-jupiter-api:5.9.3`
 * Added `org.junit.jupiter:junit-jupiter:5.9.3`
 * Added `org.mockito:mockito-core:5.3.1`
 * Added `org.mockito:mockito-junit-jupiter:5.3.1`
-* Added `org.testcontainers:junit-jupiter:1.18.0`
+* Added `org.testcontainers:junit-jupiter:1.18.3`
 
 ### Plugin Dependency Updates
 
