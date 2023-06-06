@@ -1,4 +1,4 @@
-# Spark Connector Common Java 1.0.0, released 2023-??-??
+# Spark Connector Common Java 1.0.0, released 2023-06-06
 
 Code name:
 
@@ -8,6 +8,7 @@ Code name:
 
 * #1: Added Exasol data types to the Spark schema conversion
 * #2: Added column description helper class
+* #4: Updated developer guide
 * #6: Added import query generator interface
 * #7: Added export query generator interface
 
