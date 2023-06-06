@@ -2,4 +2,4 @@ error-tags:
   SCCJ:
     packages:
       - com.exasol.spark.common
-    highest-index: 6
+    highest-index: 9
