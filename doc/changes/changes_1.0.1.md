@@ -17,7 +17,6 @@ In this release we changed the scope of Spark dependency from `compile` to `prov
 * Added `com.exasol:error-reporting-java8:1.0.1`
 * Added `com.exasol:exasol-jdbc:7.1.20`
 * Added `com.exasol:sql-statement-builder-java8:4.5.4`
-* Added `org.scala-lang:scala-library:2.13.11`
 
 ### Test Dependency Updates
 
