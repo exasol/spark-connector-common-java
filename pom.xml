@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>spark-connector-common-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>spark-connector-common-java</name>
     <description>An Exasol common library for Apache Spark connectors</description>
     <url>https://github.com/exasol/spark-connector-common-java/</url>
     <parent>
         <artifactId>spark-connector-common-java-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
     <properties>
@@ -38,7 +38,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.13</artifactId>
             <version>3.4.0</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
             <exclusions>
                 <exclusion>
                     <groupId>com.google.guava</groupId>
@@ -62,7 +62,7 @@
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>2.13.11</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
         <!-- Test Dependencies -->
         <dependency>
