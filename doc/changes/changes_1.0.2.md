@@ -25,12 +25,12 @@ This release supports additional user provided parameters.
 * Added `com.exasol:java-util-logging-testing:2.0.3`
 * Added `com.exasol:test-db-builder-java:3.4.2`
 * Added `com.fasterxml.jackson.core:jackson-core:2.15.2`
-* Added `nl.jqno.equalsverifier:equalsverifier:3.14.2`
+* Added `nl.jqno.equalsverifier:equalsverifier:3.14.3`
 * Added `org.hamcrest:hamcrest:2.2`
 * Added `org.junit.jupiter:junit-jupiter-api:5.9.3`
 * Added `org.junit.jupiter:junit-jupiter:5.9.3`
-* Added `org.mockito:mockito-core:5.3.1`
-* Added `org.mockito:mockito-junit-jupiter:5.3.1`
+* Added `org.mockito:mockito-core:5.4.0`
+* Added `org.mockito:mockito-junit-jupiter:5.4.0`
 * Added `org.testcontainers:junit-jupiter:1.18.3`
 
 ### Plugin Dependency Updates

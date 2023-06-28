@@ -16,7 +16,7 @@
     <properties>
         <java.version>8</java.version>
         <junit.version>5.9.3</junit.version>
-        <mockito.version>5.3.1</mockito.version>
+        <mockito.version>5.4.0</mockito.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,7 +37,7 @@
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.13</artifactId>
-            <version>3.4.0</version>
+            <version>3.4.1</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -128,7 +128,7 @@
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.14.2</version>
+            <version>3.14.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
