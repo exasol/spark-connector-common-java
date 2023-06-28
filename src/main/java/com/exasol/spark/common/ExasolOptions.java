@@ -9,6 +9,9 @@ import com.exasol.errorreporting.ExaError;
  */
 public final class ExasolOptions {
     private final String jdbcUrl;
+    private final String host;
+    private final String port;
+    private final String fingerprint;
     private final String username;
     private final String password;
     private final String table;
@@ -17,13 +20,36 @@ public final class ExasolOptions {
     private final Map<String, String> optionsMap;
 
     private ExasolOptions(final Builder builder) {
-        this.jdbcUrl = builder.jdbcUrl;
+        this.host = builder.host;
+        this.port = builder.port;
+        this.fingerprint = builder.fingerprint;
         this.username = builder.username;
         this.password = builder.password;
         this.table = builder.table;
         this.query = builder.query;
         this.s3Bucket = builder.s3Bucket;
         this.optionsMap = builder.optionsMap;
+        this.jdbcUrl = createJdbcUrl();
+    }
+
+    private String createJdbcUrl() {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("jdbc:exa:").append(this.host);
+        if (this.fingerprint != null && !isCertificateValidationDisabled()) {
+            sb.append("/").append(this.fingerprint);
+        }
+        sb.append(":").append(this.port);
+        if (this.containsKey(Option.JDBC_OPTIONS.key())) {
+            sb.append(";").append(this.get(Option.JDBC_OPTIONS.key()));
+        }
+        return sb.toString();
+    }
+
+    private boolean isCertificateValidationDisabled() {
+        if (!this.containsKey(Option.JDBC_OPTIONS.key())) {
+            return false;
+        }
+        return this.get(Option.JDBC_OPTIONS.key()).contains("validateservercertificate=0");
     }
 
     /**
@@ -33,6 +59,24 @@ public final class ExasolOptions {
      */
     public String getJdbcUrl() {
         return this.jdbcUrl;
+    }
+
+    /**
+     * Gets the connection host address.
+     *
+     * @return connection host
+     */
+    public String getHost() {
+        return this.host;
+    }
+
+    /**
+     * Gets the connection port value.
+     *
+     * @return connection port
+     */
+    public String getPort() {
+        return this.port;
     }
 
     /**
@@ -194,6 +238,9 @@ public final class ExasolOptions {
         }
         final ExasolOptions options = (ExasolOptions) other;
         return Objects.equals(this.jdbcUrl, options.jdbcUrl) //
+                && Objects.equals(this.host, options.host) //
+                && Objects.equals(this.port, options.port) //
+                && Objects.equals(this.fingerprint, options.fingerprint) //
                 && Objects.equals(this.username, options.username) //
                 && Objects.equals(this.password, options.password) //
                 && Objects.equals(this.table, options.table) //
@@ -204,8 +251,8 @@ public final class ExasolOptions {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.jdbcUrl, this.username, this.password, this.table, this.query, this.s3Bucket,
-                this.optionsMap);
+        return Objects.hash(this.jdbcUrl, this.host, this.port, this.fingerprint, this.username, this.password,
+                this.table, this.query, this.s3Bucket, this.optionsMap);
     }
 
     @Override
@@ -234,7 +281,9 @@ public final class ExasolOptions {
      * Builder for {@link ExasolOptions}.
      */
     public static class Builder {
-        private String jdbcUrl = "jdbc:exa:localhost:8563";
+        private String host = "localhost";
+        private String port = "8563";
+        private String fingerprint = null;
         private String username = "sys";
         @SuppressWarnings("java:S2068") // Default password used for CI
         private String password = "exasol";
@@ -244,13 +293,35 @@ public final class ExasolOptions {
         private Map<String, String> optionsMap = new HashMap<>(0);
 
         /**
-         * Sets the JDBC connection URL.
+         * Sets the connection host address.
          *
-         * @param jdbcUrl {@code JDBC} connection URL
+         * @param host {@code JDBC} connection host address
          * @return builder instance for fluent programming
          */
-        public Builder jdbcUrl(final String jdbcUrl) {
-            this.jdbcUrl = jdbcUrl;
+        public Builder host(final String host) {
+            this.host = host;
+            return this;
+        }
+
+        /**
+         * Sets the connection port.
+         *
+         * @param port {@code JDBC} connection port
+         * @return builder instance for fluent programming
+         */
+        public Builder port(final String port) {
+            this.port = port;
+            return this;
+        }
+
+        /**
+         * Sets the connection fingerprint value.
+         *
+         * @param fingerprint {@code JDBC} connection fingerprint
+         * @return builder instance for fluent programming
+         */
+        public Builder fingerprint(final String fingerprint) {
+            this.fingerprint = fingerprint;
             return this;
         }
 
