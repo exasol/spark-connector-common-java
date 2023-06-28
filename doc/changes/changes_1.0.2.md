@@ -1,4 +1,4 @@
-# Spark Connector Common Java 1.0.2, released 2023-??-??
+# Spark Connector Common Java 1.0.2, released 2023-06-28
 
 Code name: Added additional user parameters
 
