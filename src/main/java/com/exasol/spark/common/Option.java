@@ -16,6 +16,18 @@ public enum Option {
     /** Exasol database connection JDBC URL. */
     JDBC_URL("JDBC_URL", "Parameter name for Exasol database connection JDBC URL."), //
 
+    /** Exasol connection host. */
+    HOST("HOST", "Parameter name for Exasol connection host address."), //
+
+    /** Exasol connection port. */
+    PORT("PORT", "Parameter name for Exasol connection port value."), //
+
+    /** Exasol connection certificate fingerprint. */
+    FINGERPRINT("FINGERPRINT", "Parameter name for Exasol connection certificate fingerprint."), //
+
+    /** Exasol connection {@code JDBC} options. */
+    JDBC_OPTIONS("JDBC_OPTIONS", "Parameter name for Exasol key-value separated JDBC options."), //
+
     /** Exasol database username. */
     USERNAME("USERNAME", "Parameter name for Exasol database username."), //
 

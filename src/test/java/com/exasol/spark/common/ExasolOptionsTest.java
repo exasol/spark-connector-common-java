@@ -26,8 +26,46 @@ class ExasolOptionsTest {
 
     @Test
     void testGetJDBCUrl() {
-        final ExasolOptions options = ExasolOptions.builder().jdbcUrl("jdbc:exa:127.0.0.1:6666").build();
+        final ExasolOptions options = ExasolOptions.builder().host("127.0.0.1").port("6666").build();
         assertThat(options.getJdbcUrl(), equalTo("jdbc:exa:127.0.0.1:6666"));
+    }
+
+    @Test
+    void testGetUrlWithJdbcOptions() {
+        final Map<String, String> opts = Stream.of(new String[][] { { "jdbc_options", "k1=v1;k2=v2;timeout=0" } })
+                .collect(Collectors.toMap(e -> e[0], e -> e[1]));
+        final ExasolOptions options = ExasolOptions.builder().host("127.0.1.1").withOptionsMap(opts).build();
+        assertThat(options.getJdbcUrl(), equalTo("jdbc:exa:127.0.1.1:8563;k1=v1;k2=v2;timeout=0"));
+    }
+
+    @Test
+    void testGetUrlWithFingerprint() {
+        final ExasolOptions options = ExasolOptions.builder().host("127.0.0.1").fingerprint("random-hash").build();
+        assertThat(options.getJdbcUrl(), equalTo("jdbc:exa:127.0.0.1/random-hash:8563"));
+    }
+
+    @Test
+    void testGetUrlCertificateValidationDisabled() {
+        final Map<String, String> opts = Stream.of(new String[][] { { "jdbc_options", "validateservercertificate=0" } })
+                .collect(Collectors.toMap(e -> e[0], e -> e[1]));
+        final ExasolOptions options = ExasolOptions.builder() //
+            .host("127.0.0.1") //
+            .fingerprint("random-hash") //
+            .withOptionsMap(opts) //
+            .build();
+        assertThat(options.getJdbcUrl(), equalTo("jdbc:exa:127.0.0.1:8563;validateservercertificate=0"));
+    }
+
+    @Test
+    void testGetUrlWithoutCertificateValidationDisabled() {
+        final Map<String, String> opts = Stream.of(new String[][] { { "jdbc_options", "autocommit=0" } })
+                .collect(Collectors.toMap(e -> e[0], e -> e[1]));
+        final ExasolOptions options = ExasolOptions.builder() //
+            .host("127.0.0.1") //
+            .fingerprint("random") //
+            .withOptionsMap(opts) //
+            .build();
+        assertThat(options.getJdbcUrl(), equalTo("jdbc:exa:127.0.0.1/random:8563;autocommit=0"));
     }
 
     @Test
