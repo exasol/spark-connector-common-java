@@ -40,7 +40,7 @@ public final class ExasolOptions implements Serializable {
     private String createJdbcUrl() {
         final StringBuilder sb = new StringBuilder();
         sb.append("jdbc:exa:").append(this.host);
-        if (this.fingerprint != null && !isCertificateValidationDisabled()) {
+        if (hasFingerprint()) {
             sb.append("/").append(this.fingerprint);
         }
         sb.append(":").append(this.port);
@@ -82,6 +82,24 @@ public final class ExasolOptions implements Serializable {
      */
     public String getPort() {
         return this.port;
+    }
+
+    /**
+     * Checks if a certificate fingerprint is available.
+     *
+     * @return {@code true} if fingerprint value is available
+     */
+    public boolean hasFingerprint() {
+        return this.fingerprint != null && !isCertificateValidationDisabled();
+    }
+
+    /**
+     * Gets the connection certificate fingerprint value.
+     *
+     * @return fingerprint value
+     */
+    public String getFingerprint() {
+        return this.fingerprint;
     }
 
     /**
@@ -222,6 +240,40 @@ public final class ExasolOptions implements Serializable {
 
     private String toLowerCase(final Object key) {
         return key.toString().toLowerCase(Locale.ROOT);
+    }
+
+    /**
+     * Creates a new instance of {@link ExasolOptions} from {@link CaseInsensitiveStringMap}.
+     *
+     * @param map {@link CaseInsensitiveStringMap} map
+     * @return instance of {@link ExasolOptions}
+     */
+    public static ExasolOptions from(final CaseInsensitiveStringMap map) {
+        final ExasolOptions.Builder builder = ExasolOptions.builder();
+        if (map.containsKey(Option.HOST.key())) {
+            builder.host(map.get(Option.HOST.key()));
+        }
+        if (map.containsKey(Option.PORT.key())) {
+                builder.port(map.get(Option.PORT.key()));
+        }
+        if (map.containsKey(Option.USERNAME.key())) {
+                builder.username(map.get(Option.USERNAME.key()));
+        }
+        if (map.containsKey(Option.PASSWORD.key())) {
+                builder.password(map.get(Option.PASSWORD.key()));
+        }
+        if (map.containsKey(Option.FINGERPRINT.key())) {
+            builder.fingerprint(map.get(Option.FINGERPRINT.key()));
+        }
+        if (map.containsKey(Option.S3_BUCKET.key())) {
+            builder.s3Bucket(map.get(Option.S3_BUCKET.key()));
+        }
+        if (map.containsKey(Option.TABLE.key())) {
+            builder.table(map.get(Option.TABLE.key()));
+        } else if (map.containsKey(Option.QUERY.key())) {
+            builder.query(map.get(Option.QUERY.key()));
+        }
+        return builder.withOptionsMap(map).build();
     }
 
     /**
