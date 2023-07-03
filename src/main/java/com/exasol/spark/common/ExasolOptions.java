@@ -1,22 +1,37 @@
 package com.exasol.spark.common;
 
+import java.io.Serializable;
 import java.util.*;
+
+import org.apache.spark.sql.util.CaseInsensitiveStringMap;
 
 import com.exasol.errorreporting.ExaError;
 
 /**
  * Configuration parameters for Exasol Spark connectors.
  */
-public final class ExasolOptions {
+public final class ExasolOptions implements Serializable {
+    private static final long serialVersionUID = 3223251912933850463L;
+
+    /** JDBC URL parameter. */
     private final String jdbcUrl;
+    /** Host parameter. */
     private final String host;
+    /** Port parameter. */
     private final String port;
+    /** Fingerprint parameter. */
     private final String fingerprint;
+    /** Username parameter. */
     private final String username;
+    /** Password parameter. */
     private final String password;
+    /** Table parameter. */
     private final String table;
+    /** Query parameter. */
     private final String query;
+    /** S3 Bucket parameter. */
     private final String s3Bucket;
+    /** Additional key-value map. */
     private final Map<String, String> optionsMap;
 
     private ExasolOptions(final Builder builder) {
@@ -35,7 +50,7 @@ public final class ExasolOptions {
     private String createJdbcUrl() {
         final StringBuilder sb = new StringBuilder();
         sb.append("jdbc:exa:").append(this.host);
-        if (this.fingerprint != null && !isCertificateValidationDisabled()) {
+        if (hasFingerprint()) {
             sb.append("/").append(this.fingerprint);
         }
         sb.append(":").append(this.port);
@@ -77,6 +92,24 @@ public final class ExasolOptions {
      */
     public String getPort() {
         return this.port;
+    }
+
+    /**
+     * Checks if a certificate fingerprint is available.
+     *
+     * @return {@code true} if fingerprint value is available
+     */
+    public boolean hasFingerprint() {
+        return this.fingerprint != null && !isCertificateValidationDisabled();
+    }
+
+    /**
+     * Gets the connection certificate fingerprint value.
+     *
+     * @return fingerprint value
+     */
+    public String getFingerprint() {
+        return this.fingerprint;
     }
 
     /**
@@ -217,6 +250,40 @@ public final class ExasolOptions {
 
     private String toLowerCase(final Object key) {
         return key.toString().toLowerCase(Locale.ROOT);
+    }
+
+    /**
+     * Creates a new instance of {@link ExasolOptions} from {@link CaseInsensitiveStringMap}.
+     *
+     * @param map {@link CaseInsensitiveStringMap} map
+     * @return instance of {@link ExasolOptions}
+     */
+    public static ExasolOptions from(final CaseInsensitiveStringMap map) {
+        final ExasolOptions.Builder builder = ExasolOptions.builder();
+        if (map.containsKey(Option.HOST.key())) {
+            builder.host(map.get(Option.HOST.key()));
+        }
+        if (map.containsKey(Option.PORT.key())) {
+            builder.port(map.get(Option.PORT.key()));
+        }
+        if (map.containsKey(Option.USERNAME.key())) {
+            builder.username(map.get(Option.USERNAME.key()));
+        }
+        if (map.containsKey(Option.PASSWORD.key())) {
+            builder.password(map.get(Option.PASSWORD.key()));
+        }
+        if (map.containsKey(Option.FINGERPRINT.key())) {
+            builder.fingerprint(map.get(Option.FINGERPRINT.key()));
+        }
+        if (map.containsKey(Option.S3_BUCKET.key())) {
+            builder.s3Bucket(map.get(Option.S3_BUCKET.key()));
+        }
+        if (map.containsKey(Option.TABLE.key())) {
+            builder.table(map.get(Option.TABLE.key()));
+        } else if (map.containsKey(Option.QUERY.key())) {
+            builder.query(map.get(Option.QUERY.key()));
+        }
+        return builder.withOptionsMap(map).build();
     }
 
     /**
@@ -418,9 +485,15 @@ public final class ExasolOptions {
 
         private void validate() {
             if (this.table != null && this.query != null) {
-                throw new IllegalArgumentException(ExaError.messageBuilder("E-SCCJ-9")
+                throw new ExasolValidationException(ExaError.messageBuilder("E-SCCJ-9")
                         .message("It is not possible to set both 'query' and 'table' options.")
                         .mitigation("Please set only one of the them.").toString());
+            }
+            if (this.table == null && this.query == null) {
+                throw new ExasolValidationException(ExaError.messageBuilder("E-SCCJ-10")
+                        .message("At least one of the 'query' or 'table' options should be provided.")
+                        .mitigation("Please set one of the them. The 'query' for reading and 'table' for writing.")
+                        .toString());
             }
         }
 
