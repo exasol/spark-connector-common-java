@@ -13,15 +13,25 @@ import com.exasol.errorreporting.ExaError;
 public final class ExasolOptions implements Serializable {
     private static final long serialVersionUID = 3223251912933850463L;
 
+    /** JDBC URL parameter. */
     private final String jdbcUrl;
+    /** Host parameter. */
     private final String host;
+    /** Port parameter. */
     private final String port;
+    /** Fingerprint parameter. */
     private final String fingerprint;
+    /** Username parameter. */
     private final String username;
+    /** Password parameter. */
     private final String password;
+    /** Table parameter. */
     private final String table;
+    /** Query parameter. */
     private final String query;
+    /** S3 Bucket parameter. */
     private final String s3Bucket;
+    /** Additional key-value map. */
     private final Map<String, String> optionsMap;
 
     private ExasolOptions(final Builder builder) {
