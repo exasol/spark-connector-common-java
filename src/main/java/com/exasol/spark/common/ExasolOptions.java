@@ -1,13 +1,18 @@
 package com.exasol.spark.common;
 
+import java.io.Serializable;
 import java.util.*;
+
+import org.apache.spark.sql.util.CaseInsensitiveStringMap;
 
 import com.exasol.errorreporting.ExaError;
 
 /**
  * Configuration parameters for Exasol Spark connectors.
  */
-public final class ExasolOptions {
+public final class ExasolOptions implements Serializable {
+    private static final long serialVersionUID = 3223251912933850463L;
+
     private final String jdbcUrl;
     private final String host;
     private final String port;
