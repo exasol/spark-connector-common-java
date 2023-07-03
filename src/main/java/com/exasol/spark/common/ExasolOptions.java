@@ -423,9 +423,15 @@ public final class ExasolOptions implements Serializable {
 
         private void validate() {
             if (this.table != null && this.query != null) {
-                throw new IllegalArgumentException(ExaError.messageBuilder("E-SCCJ-9")
+                throw new ExasolValidationException(ExaError.messageBuilder("E-SCCJ-9")
                         .message("It is not possible to set both 'query' and 'table' options.")
                         .mitigation("Please set only one of the them.").toString());
+            }
+            if (this.table == null && this.query == null) {
+                throw new ExasolValidationException(ExaError.messageBuilder("E-SCCJ-10")
+                        .message("At least one of the 'query' or 'table' options should be provided.")
+                        .mitigation("Please set one of the them. The 'query' for reading and 'table' for writing.")
+                        .toString());
             }
         }
 
