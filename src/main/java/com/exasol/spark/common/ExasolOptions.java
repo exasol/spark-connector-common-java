@@ -264,13 +264,13 @@ public final class ExasolOptions implements Serializable {
             builder.host(map.get(Option.HOST.key()));
         }
         if (map.containsKey(Option.PORT.key())) {
-                builder.port(map.get(Option.PORT.key()));
+            builder.port(map.get(Option.PORT.key()));
         }
         if (map.containsKey(Option.USERNAME.key())) {
-                builder.username(map.get(Option.USERNAME.key()));
+            builder.username(map.get(Option.USERNAME.key()));
         }
         if (map.containsKey(Option.PASSWORD.key())) {
-                builder.password(map.get(Option.PASSWORD.key()));
+            builder.password(map.get(Option.PASSWORD.key()));
         }
         if (map.containsKey(Option.FINGERPRINT.key())) {
             builder.fingerprint(map.get(Option.FINGERPRINT.key()));
