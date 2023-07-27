@@ -41,7 +41,7 @@
 | [Versions Maven Plugin][37]                             | [Apache License, Version 2.0][27]              |
 | [duplicate-finder-maven-plugin Maven Mojo][38]          | [Apache License 2.0][7]                        |
 | [Apache Maven Deploy Plugin][39]                        | [Apache-2.0][27]                               |
-| [Apache Maven GPG Plugin][40]                           | [Apache License, Version 2.0][27]              |
+| [Apache Maven GPG Plugin][40]                           | [Apache-2.0][27]                               |
 | [Apache Maven Source Plugin][41]                        | [Apache License, Version 2.0][27]              |
 | [Apache Maven Javadoc Plugin][42]                       | [Apache-2.0][27]                               |
 | [Nexus Staging Maven Plugin][43]                        | [Eclipse Public License][44]                   |
@@ -94,7 +94,7 @@
 [35]: http://www.apache.org/licenses/LICENSE-2.0.txt
 [36]: https://maven.apache.org/surefire/maven-surefire-plugin/
 [37]: https://www.mojohaus.org/versions/versions-maven-plugin/
-[38]: https://github.com/basepom/duplicate-finder-maven-plugin
+[38]: https://basepom.github.io/duplicate-finder-maven-plugin
 [39]: https://maven.apache.org/plugins/maven-deploy-plugin/
 [40]: https://maven.apache.org/plugins/maven-gpg-plugin/
 [41]: https://maven.apache.org/plugins/maven-source-plugin/
