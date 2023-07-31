@@ -13,6 +13,11 @@ import com.exasol.sql.expression.BooleanExpression;
 public final class SelectStatementGenerator extends AbstractSelectStatementGenerator implements StatementGenerator {
     private final List<String> columns;
 
+    /**
+     * Creates an instance of {@link SelectStatementGenerator}.
+     *
+     * @param tableName table name to select from.
+     */
     public SelectStatementGenerator(final String tableName) {
         super(tableName);
         this.columns = new ArrayList<>();

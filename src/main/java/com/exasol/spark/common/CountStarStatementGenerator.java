@@ -10,6 +10,11 @@ import com.exasol.sql.expression.BooleanExpression;
  */
 public final class CountStarStatementGenerator extends AbstractSelectStatementGenerator implements StatementGenerator {
 
+    /**
+     * Creates an instance of {@link CountStarStatementGenerator}.
+     *
+     * @param tableName table name to select from.
+     */
     public CountStarStatementGenerator(final String tableName) {
         super(tableName);
     }

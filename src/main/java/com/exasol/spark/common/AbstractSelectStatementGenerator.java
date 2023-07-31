@@ -12,6 +12,8 @@ public abstract class AbstractSelectStatementGenerator {
     private static final String PLACEHOLDER_TABLE = "<PLACEHOLDER>";
     private static final StatementFactory factory = StatementFactory.getInstance();
     private final String tableName;
+
+    /** The {@link Select} statement for this generator. */
     protected final Select select;
 
     /**

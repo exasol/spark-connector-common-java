@@ -1,5 +1,8 @@
 package com.exasol.spark.common;
 
+/**
+ * A factory class for {@link StatementGenerator} instances.
+ */
 public final class StatementGeneratorFactory {
     private static StatementGeneratorFactory instance;
 
