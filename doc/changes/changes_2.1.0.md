@@ -1,12 +1,12 @@
 # Spark Connector Common Java 2.1.0, released 2023-??-??
 
-Code name:
+Code name: Added Spark filter converter
 
 ## Summary
 
 ## Features
 
-* ISSUE_NUMBER: description
+* #18: Added Spark filter converter implementation
 
 ## Dependency Updates
 
