@@ -2,9 +2,7 @@ package com.exasol.spark.common;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import com.exasol.sql.dql.select.Select;
 import com.exasol.sql.expression.BooleanExpression;
 
 /**
@@ -55,24 +53,6 @@ public final class SelectStatementGenerator extends AbstractSelectStatementGener
         return renderSelect();
     }
 
-    /**
-     * Returns select SQL statement given list of column names and predicate.
-     *
-     * @param table     table to query
-     * @param columns   list of column names to push column projection
-     * @param predicate boolean predicate to push as a where clause
-     * @return select statement string
-     */
-    // public String getSelectStatement(final String table, final List<String> columns,
-    //         final Optional<BooleanExpression> predicate) {
-    //     final Select select = StatementFactory.getInstance().select();
-    //     select.from().table(PLACEHOLDER_TABLE);
-    //     addColumns(select, columns);
-    //     addPredicate(select, predicate);
-    //     final String rendered = renderSelect(select);
-    //     return rendered.replace("\"" + PLACEHOLDER_TABLE + "\"", table);
-    // }
-
     private void addColumns() {
         if (this.columns.isEmpty()) {
             this.select.all();
@@ -80,12 +60,5 @@ public final class SelectStatementGenerator extends AbstractSelectStatementGener
             this.columns.forEach(this.select::field);
         }
     }
-
-    private void addPredicate(final Select select, final Optional<BooleanExpression> predicate) {
-        if (predicate.isPresent()) {
-            select.where(predicate.get());
-        }
-    }
-
 
 }
