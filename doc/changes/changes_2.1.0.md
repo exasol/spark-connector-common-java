@@ -1,8 +1,10 @@
-# Spark Connector Common Java 2.1.0, released 2023-??-??
+# Spark Connector Common Java 2.1.0, released 2023-08-01
 
 Code name: Added Spark filter converter
 
 ## Summary
+
+In this release we added a common class to convert Apache Spark `filter` expressions into an Exasol SQL `WHERE` clauses. This helps to enrich the user queries and push the predicate conditions down to the Exasol database.
 
 ## Features
 
