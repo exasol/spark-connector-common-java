@@ -42,11 +42,11 @@ public final class FilterConverter {
             }
             expressions.add(convertedResult);
         }
-        return Optional.of(BooleanTerm.and(expressions.toArray(new BooleanExpression[] {})));
+        return Optional.of(BooleanTerm.and(expressions.toArray(new BooleanExpression[0])));
     }
 
     /**
-     * Checks is {@link Filter} filter can be converted into Exasol expression.
+     * Checks if {@link Filter} filter can be converted to an Exasol expression.
      *
      * @param filter filter to check
      * @return {@code true} if filter can be converted; {@code false} otherwise

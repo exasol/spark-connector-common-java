@@ -34,8 +34,8 @@ public final class CountStarStatementGenerator extends AbstractSelectStatementGe
 
     @Override
     public String render() {
-      this.select.function(COUNT, stringLiteral("*"));
-    return renderSelect();
+        this.select.function(COUNT, stringLiteral("*"));
+        return renderSelect();
     }
 
 }

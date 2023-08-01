@@ -31,7 +31,7 @@ class FilterConverterTest {
     @Test
     void testNullAndEmptyFilters() {
         assertAll(() -> assertThat(filterConverter.convert(null), equalTo(Optional.empty())),
-                () -> assertThat(filterConverter.convert(new Filter[] {}), equalTo(Optional.empty())));
+                () -> assertThat(filterConverter.convert(new Filter[0]), equalTo(Optional.empty())));
     }
 
     @Test
@@ -64,7 +64,7 @@ class FilterConverterTest {
             "a,                      (\"c1\" = 'a')", //
             "XYZ,                    (\"c1\" = 'XYZ')", //
             "\u00d6,                 (\"c1\" = 'Ö')", //
-            "He said 'good morning', (\"c1\" = 'He said 'good morning'')" //
+            "He said 'good morning', (\"c1\" = 'He said ''good morning''')" //
     })
     void testEqualToStringValue(final String value, final String expected) {
         assertThat(render(new EqualTo("c1", value)), equalTo(expected));
