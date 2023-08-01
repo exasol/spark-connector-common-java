@@ -1,8 +1,10 @@
 package com.exasol.spark.common;
 
+import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.math.BigDecimal;
 import java.util.Optional;
@@ -57,6 +59,24 @@ class FilterConverterTest {
     @MethodSource("unknownFilters")
     void testEmptyOptionalIfOneOfFiltersUnknown(final Filter[] filters) {
         assertThat(filterConverter.convert(filters), equalTo(Optional.empty()));
+    }
+
+    private static final Stream<Arguments> nullLiterals() {
+        return Stream.of(//
+                Arguments.of(new EqualTo("c1", null)), //
+                Arguments.of(new LessThan("c1", null)), //
+                Arguments.of(new LessThanOrEqual("c1", null)), //
+                Arguments.of(new GreaterThan("c1", null)), //
+                Arguments.of(new GreaterThanOrEqual("c1", null)) //
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("nullLiterals")
+    void testThrowsOnNullLiterals(final Filter filter) {
+        final ExasolValidationException exception = assertThrows(ExasolValidationException.class,
+                () -> filterConverter.convert(new Filter[] { filter }));
+        assertThat(exception.getMessage(), startsWith("E-SCCJ-11"));
     }
 
     @ParameterizedTest
