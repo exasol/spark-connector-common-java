@@ -3,19 +3,19 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>spark-connector-common-java</artifactId>
-    <version>1.1.1</version>
+    <version>2.0.0</version>
     <name>spark-connector-common-java</name>
     <description>An Exasol common library for Apache Spark connectors</description>
     <url>https://github.com/exasol/spark-connector-common-java/</url>
     <parent>
         <artifactId>spark-connector-common-java-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>1.1.1</version>
+        <version>2.0.0</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
     <properties>
         <java.version>8</java.version>
-        <junit.version>5.9.3</junit.version>
+        <junit.version>5.10.0</junit.version>
         <mockito.version>5.4.0</mockito.version>
     </properties>
     <dependencies>
@@ -104,7 +104,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-testcontainers</artifactId>
-            <version>6.6.0</version>
+            <version>6.6.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -128,7 +128,7 @@
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.14.3</version>
+            <version>3.15</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -181,7 +181,7 @@
             <plugin>
                 <groupId>com.exasol</groupId>
                 <artifactId>project-keeper-maven-plugin</artifactId>
-                <version>2.9.7</version>
+                <version>2.9.9</version>
                 <executions>
                     <execution>
                         <goals>
