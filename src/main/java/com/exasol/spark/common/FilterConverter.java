@@ -13,6 +13,7 @@ import com.exasol.sql.expression.BooleanExpression;
 import com.exasol.sql.expression.BooleanTerm;
 import com.exasol.sql.expression.ValueExpression;
 import com.exasol.sql.expression.literal.BigDecimalLiteral;
+import com.exasol.sql.expression.literal.StringLiteral;
 
 /**
  * A class that converts Spark {@link Filter} operations into Exasol {@link ValueExpression} clauses.
@@ -148,7 +149,7 @@ public final class FilterConverter {
         if (value instanceof Boolean) {
             return booleanLiteral((Boolean) value);
         } else if (value instanceof String) {
-            return stringLiteral((String) value);
+            return getEscapedStringLiteral((String) value);
         } else if (value instanceof Integer) {
             return integerLiteral((Integer) value);
         } else if (value instanceof Long) {
@@ -160,8 +161,12 @@ public final class FilterConverter {
         } else if (value instanceof BigDecimal) {
             return BigDecimalLiteral.of((BigDecimal) value);
         } else {
-            return stringLiteral(value.toString());
+            return getEscapedStringLiteral(value.toString());
         }
+    }
+
+    private StringLiteral getEscapedStringLiteral(final String value) {
+        return stringLiteral(value.replace("'", "''"));
     }
 
     private String escapeLikeLiteralValue(final String value) {

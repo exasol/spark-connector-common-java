@@ -12,12 +12,11 @@ import com.exasol.sql.expression.literal.IntegerLiteral;
 import com.exasol.sql.expression.literal.StringLiteral;
 
 class StatementGeneratorTest {
-    private static final StatementGeneratorFactory factory = StatementGeneratorFactory.getInstance();
     private static SelectStatementGenerator stmtGenerator;
 
     @BeforeEach
     public void beforeEach() {
-        stmtGenerator = factory.selectFrom("DB.T1");
+        stmtGenerator = StatementGeneratorFactory.selectFrom("DB.T1");
     }
 
     @Test
@@ -48,20 +47,20 @@ class StatementGeneratorTest {
     @Test
     void testSelectInnerQuery() {
         final BooleanExpression predicate = BooleanTerm.isNull(StringLiteral.of("a"));
-        final SelectStatementGenerator stmtGenerator = factory.selectFrom("(SELECT * FROM D.T1)");
+        final SelectStatementGenerator stmtGenerator = StatementGeneratorFactory.selectFrom("(SELECT * FROM D.T1)");
         final String expected = stmtGenerator.columns("a").where(predicate).render();
         assertThat(expected, equalTo("SELECT \"a\" FROM (SELECT * FROM D.T1) WHERE 'a' IS NULL"));
     }
 
     @Test
     void testCountStarNoPredicate() {
-        final CountStarStatementGenerator countStarGen = factory.countStarFrom("DB.T1");
+        final CountStarStatementGenerator countStarGen = StatementGeneratorFactory.countStarFrom("DB.T1");
         assertThat(countStarGen.render(), equalTo("SELECT COUNT('*') FROM DB.T1"));
     }
 
     @Test
     void testCountStarWithPredicate() {
-        final CountStarStatementGenerator countStarGen = factory.countStarFrom("DB.T1");
+        final CountStarStatementGenerator countStarGen = StatementGeneratorFactory.countStarFrom("DB.T1");
         final BooleanExpression predicate = BooleanTerm.le(StringLiteral.of("a"), StringLiteral.of('x'));
         assertThat(countStarGen.where(predicate).render(), equalTo("SELECT COUNT('*') FROM DB.T1 WHERE \'a\' <= 'x'"));
     }

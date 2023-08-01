@@ -6,7 +6,7 @@ import static com.exasol.sql.expression.function.exasol.ExasolAnalyticAggregateF
 import com.exasol.sql.expression.BooleanExpression;
 
 /**
- * A class that generates an Exasol {@code SELECT} statement using selected columns and where clauses.
+ * A class that generates Exasol {@code COUNT(*)} statement including where clauses if available.
  */
 public final class CountStarStatementGenerator extends AbstractSelectStatementGenerator implements StatementGenerator {
 
