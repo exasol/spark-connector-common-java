@@ -1,4 +1,4 @@
-# Spark Connector Common Java 2.1.0, released 2023-08-01
+# Spark Connector Common Java 2.0.0, released 2023-08-01
 
 Code name: Added Spark filter converter
 
