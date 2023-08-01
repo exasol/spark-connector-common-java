@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 
 import org.apache.spark.sql.sources.*;
 
+import com.exasol.errorreporting.ExaError;
 import com.exasol.sql.expression.BooleanExpression;
 import com.exasol.sql.expression.BooleanTerm;
 import com.exasol.sql.expression.ValueExpression;
@@ -146,6 +147,11 @@ public final class FilterConverter {
     }
 
     private ValueExpression getLiteralValue(final Object value) {
+        if (Objects.isNull(value)) {
+            throw new ExasolValidationException(
+                    ExaError.messageBuilder("E-SCCJ-11").message("Value for filter condition is null.")
+                            .mitigation("Please check that filter conditions are correct.").toString());
+        }
         if (value instanceof Boolean) {
             return booleanLiteral((Boolean) value);
         } else if (value instanceof String) {
