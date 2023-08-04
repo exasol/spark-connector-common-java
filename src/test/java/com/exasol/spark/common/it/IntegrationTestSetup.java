@@ -14,7 +14,7 @@ import com.exasol.dbbuilder.dialects.exasol.ExasolSchema;
 
 public class IntegrationTestSetup {
     private static final Logger LOGGER = Logger.getLogger(IntegrationTestSetup.class.getName());
-    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "7.1.19";
+    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "7.1.22";
 
     @Container
     private static final ExasolContainer<? extends ExasolContainer<?>> EXASOL =

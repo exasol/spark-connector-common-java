@@ -209,6 +209,15 @@ public final class ExasolOptions implements Serializable {
     }
 
     /**
+     * Returns key-value pair options map.
+     *
+     * @return key-value pair map
+     */
+    public Map<String,String> getOptionsMap() {
+        return this.optionsMap;
+    }
+
+    /**
      * Checks if a parameter key is available.
      *
      * @param key parameter name to check
