@@ -25,7 +25,7 @@
 | [Test Database Builder for Java][20]            | [MIT License][21]                              |
 | [Matcher for SQL Result Sets][22]               | [MIT License][23]                              |
 | [Test utilities for `java.util.logging`][24]    | [MIT][25]                                      |
-| [EqualsVerifier | release normal jar][26]       | [Apache License, Version 2.0][27]              |
+| [EqualsVerifier \| release normal jar][26]      | [Apache License, Version 2.0][27]              |
 | [Jackson-core][28]                              | [The Apache Software License, Version 2.0][27] |
 
 ## Plugin Dependencies
