@@ -4,11 +4,11 @@ Code name: Update dependencies to fix CVEs
 
 ## Summary
 
-Update transitive dependencies to fix CVE-2023-42503, CVE-2023-43642, CVE-2022-46751 and CVE-2022-46751 
+Update transitive dependencies to fix CVE-2023-42503, CVE-2023-43642, CVE-2022-46751 and CVE-2022-46751.
 
 ## Security
 
-* 23: Update deps to fix CVE-2023-42503, CVE-2023-43642, CVE-2022-46751 and CVE-2022-46751
+* #23: Updated deps to fix CVE-2023-42503, CVE-2023-43642, CVE-2022-46751 and CVE-2022-46751
 
 ## Dependency Updates
 
