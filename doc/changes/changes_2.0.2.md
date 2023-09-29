@@ -1,4 +1,4 @@
-# Spark Connector Common Java 2.0.2, released 2023-09-28
+# Spark Connector Common Java 2.0.2, released 2023-09-29
 
 Code name: Update dependencies to fix CVEs
 
