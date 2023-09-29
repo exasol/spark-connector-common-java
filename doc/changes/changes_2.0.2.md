@@ -30,5 +30,5 @@ Update transitive dependencies to fix CVE-2023-42503, CVE-2023-43642, CVE-2022-4
 
 ### Plugin Dependency Updates
 
-* Updated `com.exasol:project-keeper-maven-plugin:2.9.9` to `2.9.12`
+* Updated `com.exasol:project-keeper-maven-plugin:2.9.10` to `2.9.12`
 * Updated `org.apache.maven.plugins:maven-enforcer-plugin:3.3.0` to `3.4.0`
