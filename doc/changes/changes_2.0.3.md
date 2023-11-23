@@ -8,6 +8,8 @@ Updated transitive dependencies to fix:
 * exasol-testcontainers: CVE-2023-4043, severity CWE-20: Improper Input Validation (7.5)
 * arvo: CVE-2023-39410, severity CWE-502: Deserialization of Untrusted Data (7.5)
 
+CVE-2023-4586 is silenced, as there is no fix at the moment.
+
 ## Features
 
 * #27: Fixed vulnerabilities in zookeeper, parsson, avro
