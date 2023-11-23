@@ -1,6 +1,6 @@
 # Spark Connector Common Java 2.0.3, released 2023-11-23
 
-Code name: Update transitive dependecies to fix CVEs
+Code name: Update transitive dependencies to fix CVEs
 
 ## Summary
 Updated transitive dependencies to fix:
