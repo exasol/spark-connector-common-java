@@ -174,11 +174,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <!-- Override Java version -->
+                    <!-- We build for Java 8 but some test dependencies require JDK 11.
+                         So we build with JDK 11 and set source and target to 8.
+                         This requires excluding compiler warning below. -->
                     <source>8</source>
                     <target>8</target>
                     <compilerArgs>
-                        <!-- Excluding [options] bootstrap class path not set in conjunction with -source 8 -->
+                        <!-- Excluding "[options] bootstrap class path not set in conjunction with -source 8" -->
                         <arg>-Xlint:all,-processing,-path,-options</arg>
                         <arg>-Werror</arg>
                     </compilerArgs>
