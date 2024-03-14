@@ -178,7 +178,8 @@
                     <source>8</source>
                     <target>8</target>
                     <compilerArgs>
-                        <arg>-Xlint:all,-processing,-path</arg>
+                        <!-- Excluding [options] bootstrap class path not set in conjunction with -source 8 -->
+                        <arg>-Xlint:all,-processing,-path,-options</arg>
                         <arg>-Werror</arg>
                     </compilerArgs>
                 </configuration>
