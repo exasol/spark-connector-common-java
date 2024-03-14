@@ -14,11 +14,11 @@ import com.exasol.dbbuilder.dialects.exasol.ExasolSchema;
 
 public class IntegrationTestSetup {
     private static final Logger LOGGER = Logger.getLogger(IntegrationTestSetup.class.getName());
-    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "7.1.22";
+    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "7.1.25";
 
     @Container
-    private static final ExasolContainer<? extends ExasolContainer<?>> EXASOL =
-        new ExasolContainer<>(getExasolDockerImage()).withReuse(true);
+    private static final ExasolContainer<? extends ExasolContainer<?>> EXASOL = new ExasolContainer<>(
+            getExasolDockerImage()).withReuse(true);
 
     protected static Connection connection;
     protected static ExasolObjectFactory factory;
