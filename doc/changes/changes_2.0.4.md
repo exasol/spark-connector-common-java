@@ -1,12 +1,15 @@
-# Spark Connector Common Java 2.0.4, released 2024-??-??
+# Spark Connector Common Java 2.0.4, released 2024-03-14
 
-Code name:
+Code name: Fix CVE-2024-25710 and CVE-2024-26308 in compile dependency
 
 ## Summary
 
-## Features
+This release fixes CVE-2024-25710 and CVE-2024-26308 in compile dependency `org.apache.commons:commons-compress:1.24.0`.
 
-* ISSUE_NUMBER: description
+## Security
+
+* #30: Fixed CVE-2024-25710 in `org.apache.commons:commons-compress:jar:1.24.0:compile`
+* #32: Fixed CVE-2024-26308 in `org.apache.commons:commons-compress:jar:1.24.0:compile`
 
 ## Dependency Updates
 
