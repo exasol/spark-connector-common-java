@@ -106,6 +106,12 @@
             <artifactId>netty-all</artifactId>
             <version>4.1.109.Final</version>
         </dependency>
+        <dependency>
+            <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2023-33546 -->
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>3.1.12</version>
+        </dependency>
         <!-- Test Dependencies -->
         <dependency>
             <groupId>org.mockito</groupId>

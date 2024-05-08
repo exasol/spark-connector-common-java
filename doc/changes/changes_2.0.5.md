@@ -14,6 +14,7 @@ Code name:
 
 * Added `io.netty:netty-all:4.1.109.Final`
 * Added `joda-time:joda-time:2.12.7`
+* Added `org.codehaus.janino:janino:3.1.12`
 
 ### Plugin Dependency Updates
 
