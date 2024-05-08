@@ -12,6 +12,7 @@ Code name:
 
 ### Compile Dependency Updates
 
+* Added `io.netty:netty-all:4.1.109.Final`
 * Added `joda-time:joda-time:2.12.7`
 
 ### Plugin Dependency Updates
