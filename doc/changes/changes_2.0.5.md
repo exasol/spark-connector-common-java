@@ -1,12 +1,17 @@
-# Spark Connector Common Java 2.0.5, released 2024-??-??
+# Spark Connector Common Java 2.0.5, released 2024-05-08
 
-Code name:
+Code name: Fix CVEs in compile and test dependencies
 
 ## Summary
+This release fixes the following vulnerabilities in dependencies:
+* CVE-2024-29025 in `io.netty:netty-codec-http:jar:4.1.96.Final:provided`
+* CVE-2024-23080 in `joda-time:joda-time:jar:2.12.5:provided`
+* CVE-2023-33546 in `org.codehaus.janino:janino:jar:3.1.9:provided`
 
 ## Features
 
-* ISSUE_NUMBER: description
+* #36: Fixed CVE-2024-23080
+* #35: Fixed CVE-2024-29025
 
 ## Dependency Updates
 
