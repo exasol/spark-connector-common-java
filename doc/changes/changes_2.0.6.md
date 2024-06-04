@@ -1,12 +1,13 @@
-# Spark Connector Common Java 2.0.6, released 2024-??-??
+# Spark Connector Common Java 2.0.6, released 2024-06-04
 
-Code name:
+Code name: CVE fix
 
 ## Summary
+Fixed CVE-2024-36114 in io.airlift:aircompressor (dependency of spark-sql).
 
 ## Features
 
-* ISSUE_NUMBER: description
+* #38: CVE-2024-36114: io.airlift:aircompressor:jar:0.25:provided
 
 ## Dependency Updates
 
