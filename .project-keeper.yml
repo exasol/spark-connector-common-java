@@ -7,4 +7,7 @@ sources:
 excludes:
   # Local changes in org.eclipse.jdt.core.prefs are required because this is built with Java 8
   - "E-PK-CORE-18: Outdated content: '.settings/org.eclipse.jdt.core.prefs'"
-linkReplacements:
+build:
+  exasolDbVersions:
+    - "8.27.0"
+    - "7.1.26"

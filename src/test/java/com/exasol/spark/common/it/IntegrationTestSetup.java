@@ -12,9 +12,9 @@ import com.exasol.containers.ExasolContainer;
 import com.exasol.dbbuilder.dialects.exasol.ExasolObjectFactory;
 import com.exasol.dbbuilder.dialects.exasol.ExasolSchema;
 
-public class IntegrationTestSetup {
+abstract class IntegrationTestSetup {
     private static final Logger LOGGER = Logger.getLogger(IntegrationTestSetup.class.getName());
-    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "7.1.25";
+    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "8.27.0";
 
     @Container
     private static final ExasolContainer<? extends ExasolContainer<?>> EXASOL = new ExasolContainer<>(
