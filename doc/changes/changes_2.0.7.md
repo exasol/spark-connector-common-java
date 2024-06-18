@@ -1,12 +1,14 @@
-# Spark Connector Common Java 2.0.7, released 2024-??-??
+# Spark Connector Common Java 2.0.7, released 2024-06-18
 
-Code name:
+Code name: Test with Exasol v8
 
 ## Summary
 
+This release verifies that this project works with Exasol v8 by running integration tests with the latest Exasol Docker DB version.
+
 ## Features
 
-* ISSUE_NUMBER: description
+* #34: Added integration tests with Exasol v8
 
 ## Dependency Updates
 
