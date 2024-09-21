@@ -28,7 +28,7 @@
 | [mockito-junit-jupiter][23]                     | [MIT][24]                                      |
 | [JUnit Jupiter (Aggregator)][25]                | [Eclipse Public License v2.0][26]              |
 | [JUnit Jupiter API][25]                         | [Eclipse Public License v2.0][26]              |
-| [Hamcrest][27]                                  | [BSD License 3][28]                            |
+| [Hamcrest][27]                                  | [BSD-3-Clause][28]                             |
 | [Testcontainers :: JUnit Jupiter Extension][29] | [MIT][30]                                      |
 | [Test containers for Exasol on Docker][31]      | [MIT License][32]                              |
 | [Test Database Builder for Java][33]            | [MIT License][34]                              |
@@ -62,7 +62,7 @@
 | [Project Keeper Maven plugin][62]                       | [The MIT License][63]             |
 
 [0]: http://www.exasol.com/
-[1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/24.1.0/exasol-jdbc-24.1.0-license.txt
+[1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/24.1.2/exasol-jdbc-24.1.2-license.txt
 [2]: https://github.com/exasol/sql-statement-builder/
 [3]: https://github.com/exasol/sql-statement-builder/blob/main/LICENSE
 [4]: https://github.com/exasol/error-reporting-java/
@@ -89,7 +89,7 @@
 [25]: https://junit.org/junit5/
 [26]: https://www.eclipse.org/legal/epl-v20.html
 [27]: http://hamcrest.org/JavaHamcrest/
-[28]: http://opensource.org/licenses/BSD-3-Clause
+[28]: https://raw.githubusercontent.com/hamcrest/JavaHamcrest/master/LICENSE
 [29]: https://java.testcontainers.org
 [30]: http://opensource.org/licenses/MIT
 [31]: https://github.com/exasol/exasol-testcontainers/
