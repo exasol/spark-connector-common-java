@@ -13,4 +13,11 @@ This release fixes vulnerability CVE-2024-7254 in com.google.protobuf:protobuf-j
 
 ### Compile Dependency Updates
 
-* Added `com.google.protobuf:protobuf-java:3.25.5`
+* Removed `io.netty:netty-all:4.1.111.Final`
+* Removed `joda-time:joda-time:2.12.7`
+* Removed `org.apache.avro:avro:1.11.3`
+* Removed `org.apache.commons:commons-compress:1.26.2`
+* Removed `org.apache.ivy:ivy:2.5.2`
+* Removed `org.apache.zookeeper:zookeeper:3.9.2`
+* Removed `org.codehaus.janino:janino:3.1.12`
+* Removed `org.xerial.snappy:snappy-java:1.1.10.5`
