@@ -1,11 +1,11 @@
-# Spark Connector Common Java 2.0.8, released 2024-09-24
+# Spark Connector Common Java 2.0.8, released 2024-09-23
 
 Code name: Fixed vulnerability CVE-2024-7254 in com.google.protobuf:protobuf-java:jar:3.19.6:provided
 
 ## Summary
-This release fixes vulnerability CVE-2024-7254 in com.google.protobuf:protobuf-java:jar:3.19.6:provided
+This release fixes vulnerability CVE-2024-7254 in com.google.protobuf:protobuf-java:jar:3.19.6:provided  which could lead to unbounded recursion.
 
-## Features
+## Security
 
 * #41: CVE-2024-7254: com.google.protobuf:protobuf-java:jar:3.19.6:provided
 
