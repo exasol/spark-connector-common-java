@@ -107,7 +107,7 @@
             <groupId>org.apache.avro</groupId>
             <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2023-44981 -->
             <artifactId>avro</artifactId>
-            <version>1.11.3</version>
+            <version>1.11.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
