@@ -1,4 +1,4 @@
-# Spark Connector Common Java 2.0.9, released 2024-??-??
+# Spark Connector Common Java 2.0.9, released 2024-10-21
 
 Code name: Fixed vulnerability CVE-2024-47561 in org.apache.avro:avro:jar:1.11.3:provided, upgrade dependencies
 
@@ -31,4 +31,9 @@ Users are recommended to upgrade to version 1.11.4 or 1.12.0, which fix this iss
 * Updated `com.exasol:test-db-builder-java:3.5.4` to `3.6.0`
 * Updated `com.fasterxml.jackson.core:jackson-core:2.17.1` to `2.18.0`
 * Updated `nl.jqno.equalsverifier:equalsverifier:3.16.1` to `3.17.1`
+* Updated `org.hamcrest:hamcrest:2.2` to `3.0`
+* Updated `org.junit.jupiter:junit-jupiter-api:5.10.2` to `5.11.2`
+* Updated `org.junit.jupiter:junit-jupiter:5.10.2` to `5.11.2`
+* Updated `org.mockito:mockito-core:5.12.0` to `5.14.2`
+* Updated `org.mockito:mockito-junit-jupiter:5.12.0` to `5.14.2`
 * Updated `org.testcontainers:junit-jupiter:1.19.8` to `1.20.2`
