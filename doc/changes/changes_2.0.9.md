@@ -14,7 +14,7 @@ Users are recommended to upgrade to version 1.11.4 or 1.12.0, which fix this iss
 * http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2024-47561
 * https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x
 
-## Features
+## Security
 
 * #44: CVE-2024-47561: org.apache.avro:avro:jar:1.11.3:provided
 
