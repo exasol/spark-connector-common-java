@@ -30,4 +30,5 @@ Users are recommended to upgrade to version 1.11.4 or 1.12.0, which fix this iss
 * Updated `com.exasol:hamcrest-resultset-matcher:1.6.5` to `1.7.0`
 * Updated `com.exasol:test-db-builder-java:3.5.4` to `3.6.0`
 * Updated `com.fasterxml.jackson.core:jackson-core:2.17.1` to `2.18.0`
+* Updated `nl.jqno.equalsverifier:equalsverifier:3.16.1` to `3.17.1`
 * Updated `org.testcontainers:junit-jupiter:1.19.8` to `1.20.2`
