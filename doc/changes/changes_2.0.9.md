@@ -1,12 +1,23 @@
 # Spark Connector Common Java 2.0.9, released 2024-??-??
 
-Code name:
+Code name: Fixed vulnerability CVE-2024-47561 in org.apache.avro:avro:jar:1.11.3:provided, upgrade dependencies
 
 ## Summary
 
+
+This release upgrades current dependencies and fixes the following vulnerability:
+
+### CVE-2024-47561 (CWE-502) in dependency `org.apache.avro:avro:jar:1.11.3:provided`
+Schema parsing in the Java SDK of Apache Avro 1.11.3 and previous versions allows bad actors to execute arbitrary code.
+Users are recommended to upgrade to version 1.11.4Â  or 1.12.0, which fix this issue.
+#### References
+* https://ossindex.sonatype.org/vulnerability/CVE-2024-47561?component-type=maven&component-name=org.apache.avro%2Favro&utm_source=ossindex-client&utm_medium=integration&utm_content=1.8.1
+* http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2024-47561
+* https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x
+
 ## Features
 
-* ISSUE_NUMBER: description
+* #44: CVE-2024-47561: org.apache.avro:avro:jar:1.11.3:provided
 
 ## Dependency Updates
 
