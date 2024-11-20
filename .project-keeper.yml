@@ -5,9 +5,7 @@ sources:
       - maven_central
       - integration_tests
 excludes:
-  # Local changes in org.eclipse.jdt.core.prefs are required because this is built with Java 8
-  - "E-PK-CORE-18: Outdated content: '.settings/org.eclipse.jdt.core.prefs'"
 build:
   exasolDbVersions:
-    - "8.27.0"
-    - "7.1.26"
+    - "8.32.0"
+    - "7.1.30"

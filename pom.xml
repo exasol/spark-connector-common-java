@@ -3,26 +3,26 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>spark-connector-common-java</artifactId>
-    <version>2.0.9</version>
+    <version>2.0.10</version>
     <name>spark-connector-common-java</name>
     <description>An Exasol common library for Apache Spark connectors</description>
     <url>https://github.com/exasol/spark-connector-common-java/</url>
     <parent>
         <artifactId>spark-connector-common-java-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>2.0.9</version>
+        <version>2.0.10</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
     <properties>
         <java.version>11</java.version>
-        <junit.version>5.11.2</junit.version>
+        <junit.version>5.11.3</junit.version>
         <mockito.version>5.14.2</mockito.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-jdbc</artifactId>
-            <version>24.1.2</version>
+            <version>24.2.0</version>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
@@ -37,7 +37,7 @@
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.13</artifactId>
-            <version>3.5.1</version>
+            <version>3.5.3</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -56,10 +56,6 @@
                     <groupId>org.slf4j</groupId>
                     <artifactId>jcl-over-slf4j</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>io.airlift</groupId>
-                    <artifactId>aircompressor</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -68,60 +64,32 @@
             <version>2.13.15</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2022-46751 -->
         <dependency>
-            <!-- Fix CVE-2024-36114 in transitive dependency of spark-sql -->
-            <groupId>io.airlift</groupId>
-            <artifactId>aircompressor</artifactId>
-            <version>0.27</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2023-42503 -->
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-compress</artifactId>
-            <version>1.27.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2023-43642 and CVE-2022-46751 -->
-            <groupId>org.xerial.snappy</groupId>
-            <artifactId>snappy-java</artifactId>
-            <version>1.1.10.7</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2022-46751 -->
             <groupId>org.apache.ivy</groupId>
             <artifactId>ivy</artifactId>
             <version>2.5.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.zookeeper</groupId>
             <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2023-44981 -->
+            <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>3.9.2</version>
+            <version>3.9.3</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.avro</groupId>
             <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2023-44981 and CVE-2024-47561 -->
+            <groupId>org.apache.avro</groupId>
             <artifactId>avro</artifactId>
-            <version>1.11.4</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2024-23080 -->
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.13.0</version>
+            <version>1.12.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2024-29025 -->
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.114.Final</version>
+            <version>4.1.115.Final</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -135,7 +103,7 @@
             <!-- Upgrade transitive dependency of org.apache.spark:spark-network-common_2.13 to fix CVE-2024-7254 -->
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>4.28.2</version>
+            <version>4.28.3</version>
             <scope>provided</scope>
         </dependency>
         <!-- Test Dependencies -->
@@ -172,7 +140,7 @@
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>1.20.2</version>
+            <version>1.20.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -202,13 +170,21 @@
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.17.1</version>
+            <version>3.17.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.18.0</version>
+            <version>2.18.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <!-- Fix java.lang.NoClassDefFoundError: org/apache/commons/lang3/ArrayFill
+                at org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.writeEOFRecord(TarArchiveOutputStream.java:677) -->
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -253,7 +229,7 @@
             <plugin>
                 <groupId>com.exasol</groupId>
                 <artifactId>project-keeper-maven-plugin</artifactId>
-                <version>4.3.3</version>
+                <version>4.4.0</version>
                 <executions>
                     <execution>
                         <goals>

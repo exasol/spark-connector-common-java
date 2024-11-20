@@ -14,9 +14,10 @@ import com.exasol.dbbuilder.dialects.exasol.ExasolSchema;
 
 abstract class IntegrationTestSetup {
     private static final Logger LOGGER = Logger.getLogger(IntegrationTestSetup.class.getName());
-    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "8.27.0";
+    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "8.32.0";
 
     @Container
+    @SuppressWarnings("resource") // Will be closed by @Testcontainers annotation
     private static final ExasolContainer<? extends ExasolContainer<?>> EXASOL = new ExasolContainer<>(
             getExasolDockerImage()).withReuse(true);
 
@@ -67,5 +68,4 @@ abstract class IntegrationTestSetup {
     private static String getExasolDockerImage() {
         return System.getProperty("com.exasol.dockerdb.image", DEFAULT_DOCKER_IMAGE_VERSION);
     }
-
 }
