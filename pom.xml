@@ -179,6 +179,14 @@
             <version>2.18.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <!-- Fix java.lang.NoClassDefFoundError: org/apache/commons/lang3/ArrayFill
+                at org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.writeEOFRecord(TarArchiveOutputStream.java:677) -->
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

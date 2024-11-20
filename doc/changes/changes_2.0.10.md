@@ -34,6 +34,7 @@ When using IPAuthenticationProvider in ZooKeeper Admin Server there is a possibi
 
 * Updated `com.fasterxml.jackson.core:jackson-core:2.18.0` to `2.18.1`
 * Updated `nl.jqno.equalsverifier:equalsverifier:3.17.1` to `3.17.3`
+* Added `org.apache.commons:commons-lang3:3.17.0`
 * Updated `org.junit.jupiter:junit-jupiter-api:5.11.2` to `5.11.3`
 * Updated `org.junit.jupiter:junit-jupiter:5.11.2` to `5.11.3`
 * Updated `org.testcontainers:junit-jupiter:1.20.2` to `1.20.3`
