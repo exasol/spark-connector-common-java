@@ -1,12 +1,16 @@
-# Spark Connector Common Java 2.0.11, released 2025-??-??
+# Spark Connector Common Java 2.0.11, released 2025-02-14
 
-Code name:
+Code name: Fixed CVE-2025-24970 and CVE-2025-25193
 
 ## Summary
 
-## Features
+This update fixes CVE-2025-24970 and CVE-2025-25193 in transitive `netty` dependency.
+It also updates other dependencies.
 
-* ISSUE_NUMBER: description
+## Security
+
+* #52: Fixed CVE-2025-25193
+* #53: Fixed CVE-2025-24970
 
 ## Dependency Updates
 
