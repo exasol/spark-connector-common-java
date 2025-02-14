@@ -23,7 +23,6 @@ It also updates other dependencies.
 * Updated `com.exasol:exasol-testcontainers:7.1.1` to `7.1.3`
 * Removed `com.fasterxml.jackson.core:jackson-core:2.18.1`
 * Updated `nl.jqno.equalsverifier:equalsverifier:3.17.3` to `3.19`
-* Removed `org.apache.commons:commons-lang3:3.17.0`
 * Updated `org.junit.jupiter:junit-jupiter-api:5.11.3` to `5.11.4`
 * Updated `org.junit.jupiter:junit-jupiter:5.11.3` to `5.11.4`
 * Updated `org.mockito:mockito-core:5.14.2` to `5.15.2`
