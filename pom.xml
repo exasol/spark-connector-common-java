@@ -3,21 +3,21 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>spark-connector-common-java</artifactId>
-    <version>2.0.11</version>
+    <version>2.0.12</version>
     <name>spark-connector-common-java</name>
     <description>An Exasol common library for Apache Spark connectors</description>
     <url>https://github.com/exasol/spark-connector-common-java/</url>
     <parent>
         <artifactId>spark-connector-common-java-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>2.0.11</version>
+        <version>2.0.12</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
     <properties>
         <java.version>11</java.version>
-        <spark.version>3.5.4</spark.version>
-        <junit.version>5.11.4</junit.version>
-        <mockito.version>5.15.2</mockito.version>
+        <spark.version>4.0.0-preview2</spark.version>
+        <junit.version>5.12.1</junit.version>
+        <mockito.version>5.16.1</mockito.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -25,7 +25,7 @@
                 <!-- Pin transitive dependency to avoid CVEs -->
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
-                <version>4.1.118.Final</version>
+                <version>4.1.119.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -35,7 +35,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-jdbc</artifactId>
-            <version>24.2.1</version>
+            <version>25.2.2</version>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
@@ -102,10 +102,9 @@
             <!-- Upgrade transitive dependency of org.apache.spark:spark-network-common_2.13 to fix CVE-2024-7254 -->
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>4.29.3</version>
+            <version>4.30.1</version>
             <scope>provided</scope>
         </dependency>
-
         <!-- Test Dependencies -->
         <dependency>
             <groupId>org.mockito</groupId>
@@ -140,13 +139,13 @@
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>1.20.4</version>
+            <version>1.20.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-testcontainers</artifactId>
-            <version>7.1.3</version>
+            <version>7.1.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -170,7 +169,7 @@
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.19</version>
+            <version>3.19.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -223,7 +222,7 @@
             <plugin>
                 <groupId>com.exasol</groupId>
                 <artifactId>project-keeper-maven-plugin</artifactId>
-                <version>4.5.0</version>
+                <version>5.0.0</version>
                 <executions>
                     <execution>
                         <goals>

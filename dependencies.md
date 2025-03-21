@@ -63,7 +63,7 @@
 | [Project Keeper Maven plugin][64]                       | [The MIT License][65]             |
 
 [0]: http://www.exasol.com/
-[1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/24.2.1/exasol-jdbc-24.2.1-license.txt
+[1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/25.2.2/exasol-jdbc-25.2.2-license.txt
 [2]: https://github.com/exasol/sql-statement-builder/
 [3]: https://github.com/exasol/sql-statement-builder/blob/main/LICENSE
 [4]: https://github.com/exasol/error-reporting-java/
