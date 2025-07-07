@@ -1,12 +1,32 @@
-# Spark Connector Common Java 2.0.12, released 2025-??-??
+# Spark Connector Common Java 2.0.12, released 2025-07-07
 
-Code name:
+Code name: Fixed vulnerabilities
 
 ## Summary
 
-## Features
+This release fixes the following vulnerabilities:
 
-* ISSUE_NUMBER: description
+### CVE-2025-47436 (CWE-122) in dependency `org.apache.orc:orc-core:jar:shaded-protobuf:1.9.4:provided`
+Heap-based Buffer Overflow vulnerability in Apache ORC.
+
+A vulnerability has been identified in the ORC C++ LZO decompression logic, where specially crafted malformed ORC files can cause the decompressor to allocate a 250-byte buffer but then attempts to copy 295 bytes into it. It causes memory corruption.
+
+This issue affects Apache ORC C++ library: through 1.8.8, from 1.9.0 through 1.9.5, from 2.0.0 through 2.0.4, from 2.1.0 through 2.1.1.
+
+Users are recommended to upgrade to version 1.8.9, 1.9.6, 2.0.5, and 2.1.2, which fix the issue.
+
+### CVE-2024-55551 (CWE-94) in dependency `com.exasol:exasol-jdbc:jar:24.2.1:compile`
+An issue was discovered in Exasol jdbc driver 24.2.0. Attackers can inject malicious parameters into the JDBC URL, triggering JNDI injection during the process when the JDBC Driver uses this URL to connect to the database. This can further lead to remote code execution vulnerability.
+#### References
+* https://ossindex.sonatype.org/vulnerability/CVE-2024-55551?component-type=maven&component-name=com.exasol%2Fexasol-jdbc&utm_source=ossindex-client&utm_medium=integration&utm_content=1.8.1
+* http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2024-55551
+* https://gist.github.com/azraelxuemo/9565ec9219e0c3e9afd5474904c39d0f
+
+
+## Security
+
+* #58: Fixed vulnerability CVE-2025-47436 in dependency `org.apache.orc:orc-core:jar:shaded-protobuf:1.9.4:provided`
+* #56: Fixed vulnerability CVE-2024-55551 in dependency `com.exasol:exasol-jdbc:jar:24.2.1:compile`
 
 ## Dependency Updates
 
