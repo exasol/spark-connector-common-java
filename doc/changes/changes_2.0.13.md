@@ -47,6 +47,10 @@ CWE: CWE-674
 
 ## Dependency Updates
 
+### Test Dependency Updates
+
+* Removed `org.apache.commons:commons-lang3:3.17.0`
+
 ### Plugin Dependency Updates
 
 * Updated `com.exasol:error-code-crawler-maven-plugin:2.0.3` to `2.0.4`
