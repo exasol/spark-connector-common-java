@@ -63,7 +63,7 @@
 | [Project Keeper Maven plugin][64]                       | [The MIT License][65]                       |
 
 [0]: http://www.exasol.com/
-[1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/24.2.1/exasol-jdbc-24.2.1-license.txt
+[1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/25.2.4/exasol-jdbc-25.2.4-license.txt
 [2]: https://github.com/exasol/sql-statement-builder/
 [3]: https://github.com/exasol/sql-statement-builder/blob/main/LICENSE
 [4]: https://github.com/exasol/error-reporting-java/
@@ -83,7 +83,7 @@
 [18]: https://opensource.org/licenses/BSD-3-Clause
 [19]: https://github.com/mockito/mockito
 [20]: https://opensource.org/licenses/MIT
-[21]: https://junit.org/junit5/
+[21]: https://junit.org/
 [22]: https://www.eclipse.org/legal/epl-v20.html
 [23]: http://hamcrest.org/JavaHamcrest/
 [24]: https://raw.githubusercontent.com/hamcrest/JavaHamcrest/master/LICENSE
