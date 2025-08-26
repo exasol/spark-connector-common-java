@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>spark-connector-common-java</artifactId>
-    <version>2.0.13</version>
+    <version>2.0.14</version>
     <name>spark-connector-common-java</name>
     <description>An Exasol common library for Apache Spark connectors</description>
     <url>https://github.com/exasol/spark-connector-common-java/</url>
     <parent>
         <artifactId>spark-connector-common-java-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>2.0.13</version>
+        <version>2.0.14</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
     <properties>
@@ -20,12 +20,13 @@
         <mockito.version>5.15.2</mockito.version>
     </properties>
     <dependencyManagement>
-        <dependencies>
+        <dependencies>                
+            <!-- Pin transitive dependency to avoid CVEs -->
+            <!--Transitive dependency override for CVE-2025-55163, direct dependency: org.apache.spark:spark-sql_2.13:3.5.4:provided-->
             <dependency>
-                <!-- Pin transitive dependency to avoid CVEs -->
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
-                <version>4.1.118.Final</version>
+                <version>4.1.124.Final</version> <!-- contains the CVE fix -->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -37,13 +38,13 @@
                 <scope>runtime</scope>
             </dependency>
             <dependency>
-            <!-- Fix java.lang.NoClassDefFoundError: org/apache/commons/lang3/ArrayFill
+                <!-- Fix java.lang.NoClassDefFoundError: org/apache/commons/lang3/ArrayFill
                 at org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.writeEOFRecord(TarArchiveOutputStream.java:677) -->
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.18.0</version>
-            <scope>test</scope>
-        </dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.18.0</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
