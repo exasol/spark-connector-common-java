@@ -24,7 +24,6 @@
             <!-- Pin transitive dependency to avoid CVEs -->
             <!--Transitive dependency override for CVE-2025-55163, direct dependency: org.apache.spark:spark-sql_2.13:3.5.4:provided-->
             <dependency>
-                <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
                 <version>4.1.124.Final</version> <!-- contains the CVE fix -->
