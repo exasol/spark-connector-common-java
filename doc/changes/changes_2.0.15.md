@@ -1,12 +1,16 @@
 # Spark Connector Common Java 2.0.15, released 2025-??-??
 
-Code name:
+Code name: Fixing netty CVEs
 
 ## Summary
 
-## Features
+This release upgrades transient dependencies to fix netty CVEs.
 
-* ISSUE_NUMBER: description
+## Security
+
+* #68: CVE-2025-58057: io.netty:netty-codec:jar:4.1.124.Final:provided
+* #70: CVE-2025-58056: io.netty:netty-codec-http:jar:4.1.124.Final:provided
+* CVE-2025-58457 CWE-280: Improper Handling of Insufficient Permissions or Privileges (in zoopkeeper)
 
 ## Dependency Updates
 
