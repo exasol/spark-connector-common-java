@@ -44,7 +44,7 @@
 | [Apache Maven Toolchains Plugin][41]                    | [Apache-2.0][13]                            |
 | [Apache Maven Compiler Plugin][42]                      | [Apache-2.0][13]                            |
 | [Apache Maven Enforcer Plugin][43]                      | [Apache-2.0][13]                            |
-| [Maven Flatten Plugin][44]                              | [Apache Software Licenese][13]              |
+| [Maven Flatten Plugin][44]                              | [Apache Software License][13]               |
 | [org.sonatype.ossindex.maven:ossindex-maven-plugin][45] | [ASL2][11]                                  |
 | [Maven Surefire Plugin][46]                             | [Apache-2.0][13]                            |
 | [Versions Maven Plugin][47]                             | [Apache License, Version 2.0][13]           |
