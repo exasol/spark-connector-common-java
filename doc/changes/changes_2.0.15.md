@@ -4,7 +4,7 @@ Code name: Fixing CVEs in Netty
 
 ## Summary
 
-This release upgrades transient dependencies to fix netty CVEs.
+This release upgrades transitive dependencies to fix CVEs in the Netty library.
 
 ## Security
 
