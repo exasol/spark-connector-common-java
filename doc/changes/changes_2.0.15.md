@@ -1,4 +1,4 @@
-# Spark Connector Common Java 2.0.15, released 2025-??-??
+# Spark Connector Common Java 2.0.15, released 2025-10-30
 
 Code name: Fixing CVEs in Netty
 
