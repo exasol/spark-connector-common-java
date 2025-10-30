@@ -10,7 +10,7 @@ This release upgrades transitive dependencies to fix CVEs in the Netty library.
 
 * #68: CVE-2025-58057: io.netty:netty-codec:jar:4.1.124.Final:provided
 * #70: CVE-2025-58056: io.netty:netty-codec-http:jar:4.1.124.Final:provided
-* CVE-2025-58457 CWE-280: Improper Handling of Insufficient Permissions or Privileges (in zoopkeeper)
+* CVE-2025-58457 CWE-280: Improper Handling of Insufficient Permissions or Privileges in org.apache.zookeeper:zookeeper:jar:3.9.3:provided
 
 ## Dependency Updates
 
