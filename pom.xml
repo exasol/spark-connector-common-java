@@ -15,9 +15,10 @@
     </parent>
     <properties>
         <java.version>11</java.version>
-        <spark.version>3.5.4</spark.version>
-        <junit.version>5.11.4</junit.version>
-        <mockito.version>5.15.2</mockito.version>
+        <spark.version>3.5.7</spark.version>
+        <!-- Version 6 requires Java 17 -->
+        <junit.version>5.14.1</junit.version>
+        <mockito.version>5.21.0</mockito.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -26,7 +27,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
-                <version>4.2.7.Final</version>
+                <version>4.2.9.Final</version>
                 <!-- contains the CVE fix -->
                 <type>pom</type>
                 <scope>import</scope>
@@ -35,7 +36,7 @@
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
-                <version>2.13.1</version>
+                <version>2.13.2</version>
                 <scope>runtime</scope>
             </dependency>
             <dependency>
@@ -43,7 +44,7 @@
                 at org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.writeEOFRecord(TarArchiveOutputStream.java:677) -->
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.18.0</version>
+                <version>3.20.0</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
@@ -52,7 +53,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-jdbc</artifactId>
-            <version>24.2.1</version>
+            <version>25.2.5</version>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
@@ -84,7 +85,7 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.13.16</version>
+            <version>2.13.18</version>
             <scope>provided</scope>
         </dependency>
         <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2022-46751 -->
@@ -105,7 +106,7 @@
             <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2023-44981 and CVE-2024-47561 -->
             <groupId>org.apache.avro</groupId>
             <artifactId>avro</artifactId>
-            <version>1.12.0</version>
+            <version>1.12.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -119,7 +120,7 @@
             <!-- Upgrade transitive dependency of org.apache.spark:spark-network-common_2.13 to fix CVE-2024-7254 -->
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>4.29.3</version>
+            <version>4.33.2</version>
             <scope>provided</scope>
         </dependency>
         <!-- Test Dependencies -->
@@ -155,38 +156,39 @@
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>1.20.4</version>
+            <artifactId>testcontainers-junit-jupiter</artifactId>
+            <version>2.0.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-testcontainers</artifactId>
-            <version>7.1.4</version>
+            <version>7.2.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>test-db-builder-java</artifactId>
-            <version>3.6.0</version>
+            <version>3.6.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>hamcrest-resultset-matcher</artifactId>
-            <version>1.7.0</version>
+            <version>1.7.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>java-util-logging-testing</artifactId>
-            <version>2.0.3</version>
+            <version>2.0.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.19</version>
+            <!-- Version 4 requires Java 17 -->
+            <version>3.19.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
