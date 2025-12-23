@@ -32,6 +32,22 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <!-- Upgrade transitive dependencies of spark-sql to fix CVE-2025-12383 -->
+                <groupId>org.glassfish.jersey</groupId>
+                <artifactId>jersey-bom</artifactId>
+                <version>2.47</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <!-- Upgrade transitive dependencies of spark-sql to fix CVE-2025-68161 -->
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>2.25.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!--Transitive dependency update for CVE-2025-53864, unresolved introducers: org.apache.spark:spark-sql_2.13:3.5.4:provided-->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
@@ -80,8 +96,20 @@
                     <groupId>commons-logging</groupId>
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
+                <exclusion>
+                    <!-- Replaced with at.yawk.lz4:lz4-java to fix CVE-2025-12183 & CVE-2025-66566 -->
+                    <groupId>org.lz4</groupId>
+                    <artifactId>lz4-java</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <!-- Replacement for org.lz4:lz4-java to fix CVE-2025-12183 & CVE-2025-66566 -->
+            <groupId>at.yawk.lz4</groupId>
+            <artifactId>lz4-java</artifactId>
+            <version>1.10.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
