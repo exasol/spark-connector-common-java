@@ -25,7 +25,7 @@ This release fixes the following vulnerabilities:
 
 ### Compile Dependency Updates
 
-* Added `at.yawk.lz4:lz4-java:1.10.1`
+* Added `at.yawk.lz4:lz4-java:1.10.2`
 * Updated `com.exasol:exasol-jdbc:24.2.1` to `25.2.5`
 
 ### Test Dependency Updates
