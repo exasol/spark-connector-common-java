@@ -24,7 +24,8 @@
 | ----------------------------------------------- | --------------------------------- |
 | [mockito-core][22]                              | [MIT][23]                         |
 | [mockito-junit-jupiter][22]                     | [MIT][23]                         |
-| [JUnit Jupiter (Aggregator)][24]                | [Eclipse Public License v2.0][25] |
+| [JUnit Jupiter API][24]                         | [Eclipse Public License v2.0][25] |
+| [JUnit Jupiter Params][24]                      | [Eclipse Public License v2.0][25] |
 | [Hamcrest][26]                                  | [BSD-3-Clause][27]                |
 | [Testcontainers :: JUnit Jupiter Extension][28] | [MIT][29]                         |
 | [Test containers for Exasol on Docker][30]      | [MIT License][31]                 |

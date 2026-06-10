@@ -23,8 +23,9 @@ Starting with this release, this project no longer supports Exasol 7.1. The supp
 
 * Updated `com.exasol:exasol-testcontainers:7.2.2` to `7.3.0`
 * Updated `com.exasol:test-db-builder-java:3.6.4` to `4.0.0`
-* Removed `org.junit.jupiter:junit-jupiter-api:5.14.1`
-* Updated `org.junit.jupiter:junit-jupiter:5.14.1` to `5.14.4`
+* Updated `org.junit.jupiter:junit-jupiter-api:5.14.1` to `5.14.4`
+* Added `org.junit.jupiter:junit-jupiter-params:5.14.4`
+* Removed `org.junit.jupiter:junit-jupiter:5.14.1`
 * Updated `org.mockito:mockito-core:5.21.0` to `5.23.0`
 * Updated `org.mockito:mockito-junit-jupiter:5.21.0` to `5.23.0`
 * Updated `org.testcontainers:testcontainers-junit-jupiter:2.0.3` to `2.0.5`
