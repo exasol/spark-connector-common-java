@@ -1,8 +1,38 @@
-# Spark Connector Common Java 3.0.0, released 2026-??-??
+# Spark Connector Common Java 3.0.0, released 2026-06-10
 
 Code name: Fix vulnerabilities
 
 ## Summary
+
+This release fixes the following vulnerabilities in dependencies:
+
+| CVE | Dependency | Short description |
+|---|---|---|
+| CVE-2026-42577 | `io.netty:netty-transport-classes-epoll:4.2.9.Final:runtime` | Missing release of resource after effective lifetime |
+| CVE-2026-42583 | `io.netty:netty-codec-compression:4.2.9.Final:provided` | Uncontrolled resource consumption / resource exhaustion |
+| CVE-2026-33870 | `io.netty:netty-codec-http:4.2.9.Final:provided` | HTTP request smuggling |
+| CVE-2026-41417 | `io.netty:netty-codec-http:4.2.9.Final:provided` | HTTP request smuggling |
+| CVE-2026-42580 | `io.netty:netty-codec-http:4.2.9.Final:provided` | Integer overflow or wraparound |
+| CVE-2026-42581 | `io.netty:netty-codec-http:4.2.9.Final:provided` | HTTP request smuggling |
+| CVE-2026-42584 | `io.netty:netty-codec-http:4.2.9.Final:provided` | HTTP request smuggling |
+| CVE-2026-42585 | `io.netty:netty-codec-http:4.2.9.Final:provided` | HTTP request smuggling |
+| CVE-2026-42587 | `io.netty:netty-codec-http:4.2.9.Final:provided` | Uncontrolled resource consumption / resource exhaustion |
+| CVE-2026-34477 | `org.apache.logging.log4j:log4j-core:2.25.3:provided` | Improper certificate validation |
+| CVE-2026-34478 | `org.apache.logging.log4j:log4j-core:2.25.3:provided` | Improper output neutralization for logs |
+| CVE-2026-34479 | `org.apache.logging.log4j:log4j-core:2.25.3:provided` | Improper encoding or escaping of output |
+| CVE-2026-34480 | `org.apache.logging.log4j:log4j-core:2.25.3:provided` | Improper encoding or escaping of output |
+| CVE-2026-24281 | `org.apache.zookeeper:zookeeper:3.9.4:provided` | Improper certificate validation |
+| CVE-2026-24308 | `org.apache.zookeeper:zookeeper:3.9.4:provided` | Information exposure through log files |
+| CVE-2025-67721 | `io.airlift:aircompressor:0.27:provided` | Out-of-bounds read |
+| CVE-2026-44249 | `io.netty:netty-handler:4.2.9.Final:provided` | Comparison using wrong factors |
+| CVE-2026-44894 | `io.netty:netty-codec-classes-quic:4.2.9.Final:runtime` | Improper access control |
+| CVE-2026-42578 | `io.netty:netty-handler-proxy:4.2.9.Final:provided` | CRLF injection / HTTP response splitting |
+| CVE-2026-42582 | `io.netty:netty-codec-http3:4.2.9.Final:provided` | Allocation of resources without limits or throttling |
+| CVE-2026-44892 | `io.netty:netty-codec-http3:4.2.9.Final:provided` | Uncontrolled resource consumption / resource exhaustion |
+| CVE-2026-33871 | `io.netty:netty-codec-http2:4.2.9.Final:provided` | Allocation of resources without limits or throttling |
+| CVE-2026-42587 | `io.netty:netty-codec-http2:4.2.9.Final:provided` | Uncontrolled resource consumption / resource exhaustion |
+| CVE-2026-48043 | `io.netty:netty-codec-http2:4.2.9.Final:provided` | Uncontrolled resource consumption / resource exhaustion |
+| CVE-2026-50560 | `io.netty:netty-codec-http2:4.2.9.Final:provided` | Allocation of resources without limits or throttling |
 
 ## Breaking Change
 
