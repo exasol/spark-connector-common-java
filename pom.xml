@@ -15,7 +15,8 @@
     </parent>
     <properties>
         <java.version>11</java.version>
-        <spark.version>4.1.2</spark.version>
+        <!-- Version 4 requires Java 17 -->
+        <spark.version>3.5.8</spark.version>
         <!-- Version 6 requires Java 17 -->
         <junit.version>5.14.4</junit.version>
         <mockito.version>5.23.0</mockito.version>
@@ -102,6 +103,13 @@
                     <artifactId>lz4-java</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <!-- Upgrade transitive dependency of org.apache.spark:spark-sql_2.13 to fix CVE-2025-67721 -->
+            <groupId>io.airlift</groupId>
+            <artifactId>aircompressor</artifactId>
+            <version>2.0.3</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <!-- Replacement for org.lz4:lz4-java to fix CVE-2025-12183 & CVE-2025-66566 -->
