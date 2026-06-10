@@ -14,7 +14,7 @@ import com.exasol.dbbuilder.dialects.exasol.ExasolSchema;
 
 abstract class IntegrationTestSetup {
     private static final Logger LOGGER = Logger.getLogger(IntegrationTestSetup.class.getName());
-    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "8.32.0";
+    private static final String DEFAULT_DOCKER_IMAGE_VERSION = "2026.1.0";
 
     @Container
     @SuppressWarnings("resource") // Will be closed by @Testcontainers annotation
@@ -26,7 +26,7 @@ abstract class IntegrationTestSetup {
     protected static ExasolSchema exasolDatabase;
 
     @BeforeAll
-    public static void beforeAll() throws SQLException {
+    public static void beforeAll() {
         EXASOL.purgeDatabase();
         connection = EXASOL.createConnection();
         factory = new ExasolObjectFactory(connection);
