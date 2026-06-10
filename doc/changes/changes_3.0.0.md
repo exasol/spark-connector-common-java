@@ -1,12 +1,16 @@
-# Spark Connector Common Java 2.0.17, released 2026-??-??
+# Spark Connector Common Java 3.0.0, released 2026-??-??
 
-Code name:
+Code name: Fix vulnerabilities
 
 ## Summary
 
-## Features
+## Breaking Change
 
-* ISSUE_NUMBER: description
+Starting with this release, this project no longer supports Exasol 7.1. The supported versions are the current release and the LTS release line `2025.1.x`.
+
+## Security
+
+* #82: Fix dependency check
 
 ## Dependency Updates
 

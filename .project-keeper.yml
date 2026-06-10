@@ -7,6 +7,5 @@ sources:
 excludes:
 build:
   exasolDbVersions:
-    - "2025.2.0"
-    - "8.29.13"
-    - "7.1.30"
+    - "2026.1.0"
+    - "2025.2.10"
