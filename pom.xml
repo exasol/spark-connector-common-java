@@ -3,22 +3,22 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>spark-connector-common-java</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <name>spark-connector-common-java</name>
     <description>An Exasol common library for Apache Spark connectors</description>
     <url>https://github.com/exasol/spark-connector-common-java/</url>
     <parent>
         <artifactId>spark-connector-common-java-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
     <properties>
         <java.version>11</java.version>
         <!-- Version 4 requires Java 17 -->
-        <spark.version>3.5.8</spark.version>
+        <spark.version>4.2.0-preview5</spark.version>
         <!-- Version 6 requires Java 17 -->
-        <junit.version>5.14.4</junit.version>
+        <junit.version>6.1.2</junit.version>
         <mockito.version>5.23.0</mockito.version>
     </properties>
     <dependencyManagement>
@@ -28,7 +28,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
-                <version>4.2.15.Final</version>
+                <version>4.2.16.Final</version>
                 <!-- contains the CVE fix -->
                 <type>pom</type>
                 <scope>import</scope>
@@ -37,7 +37,7 @@
                 <!-- Upgrade transitive dependencies of spark-sql to fix CVE-2025-12383 -->
                 <groupId>org.glassfish.jersey</groupId>
                 <artifactId>jersey-bom</artifactId>
-                <version>2.47</version>
+                <version>4.0.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -45,7 +45,7 @@
                 <!-- Upgrade transitive dependencies of spark-sql to fix CVE-2025-68161 -->
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-bom</artifactId>
-                <version>2.26.0</version>
+                <version>2.26.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-jdbc</artifactId>
-            <version>26.2.7</version>
+            <version>26.2.8</version>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
@@ -115,19 +115,19 @@
             <!-- Replacement for org.lz4:lz4-java to fix CVE-2025-12183 & CVE-2025-66566 -->
             <groupId>at.yawk.lz4</groupId>
             <artifactId>lz4-java</artifactId>
-            <version>1.11.0</version>
+            <version>1.11.1</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.13.18</version>
+            <version>3.8.4</version>
             <scope>provided</scope>
         </dependency>
         <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2022-46751 -->
         <dependency>
             <groupId>org.apache.ivy</groupId>
             <artifactId>ivy</artifactId>
-            <version>2.5.3</version>
+            <version>2.6.0</version>
             <scope>provided</scope>
         </dependency>
         <!-- Upgrade transitive dependency of org.apache.spark:spark-core_2.13 to fix CVE-2023-44981 -->
@@ -155,7 +155,7 @@
             <!-- Upgrade transitive dependency of org.apache.spark:spark-network-common_2.13 to fix CVE-2024-7254 -->
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>4.35.0</version>
+            <version>4.35.1</version>
             <scope>provided</scope>
         </dependency>
         <!-- Test Dependencies -->
@@ -204,7 +204,7 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>test-db-builder-java</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -223,7 +223,7 @@
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
             <!-- Version 4 requires Java 17 -->
-            <version>3.19.4</version>
+            <version>4.5</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -262,7 +262,7 @@
             <plugin>
                 <groupId>com.exasol</groupId>
                 <artifactId>project-keeper-maven-plugin</artifactId>
-                <version>5.6.2</version>
+                <version>5.7.4</version>
                 <executions>
                     <execution>
                         <goals>
