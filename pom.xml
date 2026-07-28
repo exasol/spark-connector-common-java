@@ -115,7 +115,7 @@
             <!-- Replacement for org.lz4:lz4-java to fix CVE-2025-12183 & CVE-2025-66566 -->
             <groupId>at.yawk.lz4</groupId>
             <artifactId>lz4-java</artifactId>
-            <version>1.11.0</version>
+            <version>1.11.1</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
