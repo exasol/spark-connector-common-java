@@ -32,7 +32,7 @@ public final class ExasolOptions implements Serializable {
     /** S3 Bucket parameter. */
     private final String s3Bucket;
     /** Additional key-value map. */
-    private final Map<String, String> optionsMap;
+    private final HashMap<String, String> optionsMap;
 
     private ExasolOptions(final Builder builder) {
         this.host = builder.host;
@@ -213,7 +213,7 @@ public final class ExasolOptions implements Serializable {
      *
      * @return key-value pair map
      */
-    public Map<String,String> getOptionsMap() {
+    public Map<String, String> getOptionsMap() {
         return this.optionsMap;
     }
 
@@ -366,7 +366,7 @@ public final class ExasolOptions implements Serializable {
         private String table = null;
         private String query = null;
         private String s3Bucket = null;
-        private Map<String, String> optionsMap = new HashMap<>(0);
+        private HashMap<String, String> optionsMap = new HashMap<>(0);
 
         /**
          * Sets the connection host address.
@@ -467,9 +467,9 @@ public final class ExasolOptions implements Serializable {
             return this;
         }
 
-        private Map<String, String> getCaseInsensitiveMap(final Map<String, String> map) {
-            final Map<String, String> caseInsensitiveMap = new HashMap<>(map.size());
-            for (Map.Entry<String, String> entry : map.entrySet()) {
+        private HashMap<String, String> getCaseInsensitiveMap(final Map<String, String> map) {
+            final HashMap<String, String> caseInsensitiveMap = new HashMap<>(map.size());
+            for (final Map.Entry<String, String> entry : map.entrySet()) {
                 final String lowerCaseKey = entry.getKey().toLowerCase(Locale.ROOT);
                 if (caseInsensitiveMap.containsKey(lowerCaseKey)) {
                     throw new IllegalArgumentException(ExaError.messageBuilder("E-SCCJ-8")
