@@ -53,15 +53,16 @@
 | [Build Helper Maven Plugin][54]                         | [The MIT License][55]                          |
 | [Apache Maven GPG Plugin][56]                           | [Apache-2.0][15]                               |
 | [Central Publishing Maven Plugin][57]                   | [The Apache License, Version 2.0][15]          |
-| [Maven Failsafe Plugin][58]                             | [Apache-2.0][15]                               |
-| [JaCoCo :: Maven Plugin][59]                            | [EPL-2.0][60]                                  |
-| [error-code-crawler-maven-plugin][61]                   | [MIT License][62]                              |
-| [Git Commit Id Maven Plugin][63]                        | [GNU Lesser General Public License 3.0][64]    |
-| [Project Keeper Maven plugin][65]                       | [The MIT License][66]                          |
-| [Apache Maven Clean Plugin][67]                         | [Apache-2.0][15]                               |
-| [Apache Maven Resources Plugin][68]                     | [Apache-2.0][15]                               |
-| [Apache Maven Install Plugin][69]                       | [Apache-2.0][15]                               |
-| [Apache Maven Site Plugin][70]                          | [Apache-2.0][15]                               |
+| [Apache Maven Dependency Plugin][58]                    | [Apache-2.0][15]                               |
+| [Maven Failsafe Plugin][59]                             | [Apache-2.0][15]                               |
+| [JaCoCo :: Maven Plugin][60]                            | [EPL-2.0][61]                                  |
+| [error-code-crawler-maven-plugin][62]                   | [MIT License][63]                              |
+| [Git Commit Id Maven Plugin][64]                        | [GNU Lesser General Public License 3.0][65]    |
+| [Project Keeper Maven plugin][66]                       | [The MIT License][67]                          |
+| [Apache Maven Clean Plugin][68]                         | [Apache-2.0][15]                               |
+| [Apache Maven Resources Plugin][69]                     | [Apache-2.0][15]                               |
+| [Apache Maven Install Plugin][70]                       | [Apache-2.0][15]                               |
+| [Apache Maven Site Plugin][71]                          | [Apache-2.0][15]                               |
 
 [0]: https://www.exasol.com/
 [1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/26.2.8/exasol-jdbc-26.2.8-license.txt
@@ -121,16 +122,17 @@
 [55]: https://spdx.org/licenses/MIT.txt
 [56]: https://maven.apache.org/plugins/maven-gpg-plugin/
 [57]: https://central.sonatype.org
-[58]: https://maven.apache.org/surefire/maven-failsafe-plugin/
-[59]: https://www.jacoco.org/jacoco/trunk/doc/maven.html
-[60]: https://www.eclipse.org/legal/epl-2.0/
-[61]: https://github.com/exasol/error-code-crawler-maven-plugin/
-[62]: https://github.com/exasol/error-code-crawler-maven-plugin/blob/main/LICENSE
-[63]: https://github.com/git-commit-id/git-commit-id-maven-plugin
-[64]: http://www.gnu.org/licenses/lgpl-3.0.txt
-[65]: https://github.com/exasol/project-keeper/
-[66]: https://github.com/exasol/project-keeper/blob/main/LICENSE
-[67]: https://maven.apache.org/plugins/maven-clean-plugin/
-[68]: https://maven.apache.org/plugins/maven-resources-plugin/
-[69]: https://maven.apache.org/plugins/maven-install-plugin/
-[70]: https://maven.apache.org/plugins/maven-site-plugin/
+[58]: https://maven.apache.org/plugins/maven-dependency-plugin/
+[59]: https://maven.apache.org/surefire/maven-failsafe-plugin/
+[60]: https://www.jacoco.org/jacoco/trunk/doc/maven.html
+[61]: https://www.eclipse.org/legal/epl-2.0/
+[62]: https://github.com/exasol/error-code-crawler-maven-plugin/
+[63]: https://github.com/exasol/error-code-crawler-maven-plugin/blob/main/LICENSE
+[64]: https://github.com/git-commit-id/git-commit-id-maven-plugin
+[65]: http://www.gnu.org/licenses/lgpl-3.0.txt
+[66]: https://github.com/exasol/project-keeper/
+[67]: https://github.com/exasol/project-keeper/blob/main/LICENSE
+[68]: https://maven.apache.org/plugins/maven-clean-plugin/
+[69]: https://maven.apache.org/plugins/maven-resources-plugin/
+[70]: https://maven.apache.org/plugins/maven-install-plugin/
+[71]: https://maven.apache.org/plugins/maven-site-plugin/

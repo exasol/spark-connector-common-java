@@ -243,6 +243,7 @@ Users are advised to upgrade to Apache Log4j API 2.25.5 or 2.26.1, both of which
 * Updated `com.exasol:error-code-crawler-maven-plugin:2.0.7` to `2.1.0`
 * Updated `com.exasol:project-keeper-maven-plugin:5.6.2` to `5.7.4`
 * Removed `com.exasol:quality-summarizer-maven-plugin:0.2.1`
+* Added `org.apache.maven.plugins:maven-dependency-plugin:3.11.0`
 * Updated `org.apache.maven.plugins:maven-enforcer-plugin:3.6.2` to `3.6.3`
 * Updated `org.apache.maven.plugins:maven-failsafe-plugin:3.5.5` to `3.5.6`
 * Updated `org.apache.maven.plugins:maven-site-plugin:3.21.0` to `3.22.0`
