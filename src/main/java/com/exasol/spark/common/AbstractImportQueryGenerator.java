@@ -9,6 +9,13 @@ package com.exasol.spark.common;
 public abstract class AbstractImportQueryGenerator implements QueryGenerator {
     private static final String IMPORT_QUERY_FOOTER = "SKIP = 1";
 
+    /**
+     * Creates an import query generator.
+     */
+    protected AbstractImportQueryGenerator() {
+        // Empty by design.
+    }
+
     @Override
     public String getFooter() {
         return IMPORT_QUERY_FOOTER;

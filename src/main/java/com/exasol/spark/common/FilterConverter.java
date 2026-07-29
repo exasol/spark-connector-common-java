@@ -24,6 +24,13 @@ public final class FilterConverter {
     private static final Map<Class<? extends Filter>, OperationType> FILTERS = getMappings();
 
     /**
+     * Creates a filter converter.
+     */
+    public FilterConverter() {
+        // Empty by design.
+    }
+
+    /**
      * Converts an array of Spark {@link Filter} conditions into Exasol SQL expression.
      *
      * The function returns {@link Optional#empty()} if any of the filters cannot be converted into Exasol where clause.
@@ -107,11 +114,9 @@ public final class FilterConverter {
 
         case NOT:
             final Not not = (Not) filter;
-            if (not.child() instanceof In) {
-                final In notIn = (In) not.child();
+            if (not.child() instanceof In notIn) {
                 return BooleanTerm.notIn(column(notIn.attribute()), getMappedLiteralValues(notIn.values()));
-            } else if (not.child() instanceof EqualTo) {
-                final EqualTo notEqualTo = (EqualTo) not.child();
+            } else if (not.child() instanceof EqualTo notEqualTo) {
                 return BooleanTerm.compare(column(notEqualTo.attribute()), "<>", getLiteralValue(notEqualTo.value()));
             }
             final BooleanExpression notResult = convertFilter(not.child());
@@ -152,20 +157,20 @@ public final class FilterConverter {
                     ExaError.messageBuilder("E-SCCJ-11").message("Value for filter condition is null.")
                             .mitigation("Please check that filter conditions are correct.").toString());
         }
-        if (value instanceof Boolean) {
-            return booleanLiteral((Boolean) value);
-        } else if (value instanceof String) {
-            return getEscapedStringLiteral((String) value);
-        } else if (value instanceof Integer) {
-            return integerLiteral((Integer) value);
-        } else if (value instanceof Long) {
-            return longLiteral((Long) value);
-        } else if (value instanceof Float) {
-            return floatLiteral((Float) value);
-        } else if (value instanceof Double) {
-            return doubleLiteral((Double) value);
-        } else if (value instanceof BigDecimal) {
-            return BigDecimalLiteral.of((BigDecimal) value);
+        if (value instanceof Boolean booleanValue) {
+            return booleanLiteral(booleanValue);
+        } else if (value instanceof String stringValue) {
+            return getEscapedStringLiteral(stringValue);
+        } else if (value instanceof Integer integerValue) {
+            return integerLiteral(integerValue);
+        } else if (value instanceof Long longValue) {
+            return longLiteral(longValue);
+        } else if (value instanceof Float floatValue) {
+            return floatLiteral(floatValue);
+        } else if (value instanceof Double doubleValue) {
+            return doubleLiteral(doubleValue);
+        } else if (value instanceof BigDecimal bigDecimal) {
+            return BigDecimalLiteral.of(bigDecimal);
         } else {
             return getEscapedStringLiteral(value.toString());
         }

@@ -9,6 +9,13 @@ package com.exasol.spark.common;
 public abstract class AbstractExportQueryGenerator implements QueryGenerator {
     private static final String EXPORT_QUERY_FOOTER = "WITH COLUMN NAMES\nBOOLEAN = 'true/false'";
 
+    /**
+     * Creates an export query generator.
+     */
+    protected AbstractExportQueryGenerator() {
+        // Empty by design.
+    }
+
     @Override
     public String getFooter() {
         return EXPORT_QUERY_FOOTER;

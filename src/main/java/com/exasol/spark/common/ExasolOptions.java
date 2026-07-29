@@ -13,26 +13,66 @@ import com.exasol.errorreporting.ExaError;
 public final class ExasolOptions implements Serializable {
     private static final long serialVersionUID = 3223251912933850463L;
 
-    /** JDBC URL parameter. */
+    /**
+     * JDBC URL parameter.
+     *
+     * @serial JDBC connection URL.
+     */
     private final String jdbcUrl;
-    /** Host parameter. */
+    /**
+     * Host parameter.
+     *
+     * @serial JDBC connection host.
+     */
     private final String host;
-    /** Port parameter. */
+    /**
+     * Port parameter.
+     *
+     * @serial JDBC connection port.
+     */
     private final String port;
-    /** Fingerprint parameter. */
+    /**
+     * Fingerprint parameter.
+     *
+     * @serial JDBC connection certificate fingerprint.
+     */
     private final String fingerprint;
-    /** Username parameter. */
+    /**
+     * Username parameter.
+     *
+     * @serial JDBC connection username.
+     */
     private final String username;
-    /** Password parameter. */
+    /**
+     * Password parameter.
+     *
+     * @serial JDBC connection password.
+     */
     private final String password;
-    /** Table parameter. */
+    /**
+     * Table parameter.
+     *
+     * @serial Exasol table name.
+     */
     private final String table;
-    /** Query parameter. */
+    /**
+     * Query parameter.
+     *
+     * @serial Exasol query.
+     */
     private final String query;
-    /** S3 Bucket parameter. */
+    /**
+     * S3 Bucket parameter.
+     *
+     * @serial S3 bucket name.
+     */
     private final String s3Bucket;
-    /** Additional key-value map. */
-    private final Map<String, String> optionsMap;
+    /**
+     * Additional key-value map.
+     *
+     * @serial Additional connector options.
+     */
+    private final HashMap<String, String> optionsMap;
 
     private ExasolOptions(final Builder builder) {
         this.host = builder.host;
@@ -213,7 +253,7 @@ public final class ExasolOptions implements Serializable {
      *
      * @return key-value pair map
      */
-    public Map<String,String> getOptionsMap() {
+    public Map<String, String> getOptionsMap() {
         return this.optionsMap;
     }
 
@@ -366,7 +406,14 @@ public final class ExasolOptions implements Serializable {
         private String table = null;
         private String query = null;
         private String s3Bucket = null;
-        private Map<String, String> optionsMap = new HashMap<>(0);
+        private HashMap<String, String> optionsMap = new HashMap<>(0);
+
+        /**
+         * Creates an Exasol options builder with default values.
+         */
+        private Builder() {
+            // Empty by design.
+        }
 
         /**
          * Sets the connection host address.
@@ -467,9 +514,9 @@ public final class ExasolOptions implements Serializable {
             return this;
         }
 
-        private Map<String, String> getCaseInsensitiveMap(final Map<String, String> map) {
-            final Map<String, String> caseInsensitiveMap = new HashMap<>(map.size());
-            for (Map.Entry<String, String> entry : map.entrySet()) {
+        private HashMap<String, String> getCaseInsensitiveMap(final Map<String, String> map) {
+            final HashMap<String, String> caseInsensitiveMap = new HashMap<>(map.size());
+            for (final Map.Entry<String, String> entry : map.entrySet()) {
                 final String lowerCaseKey = entry.getKey().toLowerCase(Locale.ROOT);
                 if (caseInsensitiveMap.containsKey(lowerCaseKey)) {
                     throw new IllegalArgumentException(ExaError.messageBuilder("E-SCCJ-8")
