@@ -235,7 +235,7 @@ Users are advised to upgrade to Apache Log4j API 2.25.5 or 2.26.1, both of which
 * Updated `com.exasol:test-db-builder-java:4.0.0` to `4.0.2`
 * Updated `nl.jqno.equalsverifier:equalsverifier:3.19.4` to `4.5`
 * Removed `org.junit.jupiter:junit-jupiter-api:5.14.4`
-* Updated `org.junit.jupiter:junit-jupiter-params:5.14.4` to `6.1.1`
+* Updated `org.junit.jupiter:junit-jupiter-params:5.14.4` to `6.1.2`
 * Removed `org.mockito:mockito-core:5.23.0`
 
 ### Plugin Dependency Updates
