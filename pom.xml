@@ -112,6 +112,11 @@
                     <groupId>org.lz4</groupId>
                     <artifactId>lz4-java</artifactId>
                 </exclusion>
+                <exclusion>
+                    <!-- Jersey 4's servlet module supersedes the legacy servlet-core module. -->
+                    <groupId>org.glassfish.jersey.containers</groupId>
+                    <artifactId>jersey-container-servlet-core</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -253,6 +258,10 @@
                         <ignoredResourcePattern>about.html</ignoredResourcePattern>
                         <ignoredResourcePattern>.*\.proto$</ignoredResourcePattern>
                     </ignoredResourcePatterns>
+                    <ignoredClassPatterns>
+                        <!-- Spark Catalyst embeds this DataSketches implementation class. -->
+                        <ignoredClassPattern>org.apache.datasketches.memory.internal.ResourceImpl</ignoredClassPattern>
+                    </ignoredClassPatterns>
                 </configuration>
             </plugin>
             <plugin>
