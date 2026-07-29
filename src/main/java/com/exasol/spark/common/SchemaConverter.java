@@ -2,7 +2,6 @@ package com.exasol.spark.common;
 
 import java.sql.Types;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.exasol.errorreporting.ExaError;
 
@@ -36,8 +35,8 @@ public final class SchemaConverter {
                     .message("Provided list of column descriptions is empty or null.")
                     .mitigation("Please make sure that table or query has column definitions.").toString());
         }
-        final List<StructField> fields = columns.stream().map(this::convertColumn).collect(Collectors.toList());
-        return new StructType(fields.stream().toArray(StructField[]::new));
+        final List<StructField> fields = columns.stream().map(this::convertColumn).toList();
+        return new StructType(fields.toArray(StructField[]::new));
     }
 
     /**
@@ -95,8 +94,7 @@ public final class SchemaConverter {
             return DataTypes.StringType;
         case Types.DATE:
             return DataTypes.DateType;
-        case Types.TIME:
-        case Types.TIMESTAMP:
+        case Types.TIME, Types.TIMESTAMP:
             return DataTypes.TimestampType;
         default:
             throw new UnsupportedOperationException(

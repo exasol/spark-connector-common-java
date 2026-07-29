@@ -5,11 +5,8 @@ package com.exasol.spark.common;
  */
 public final class StatementGeneratorFactory {
 
-    /**
-     * Creates a statement generator factory.
-     */
-    public StatementGeneratorFactory() {
-        // Empty by design.
+    private StatementGeneratorFactory() {
+        // Prevent instantiation.
     }
 
     /**
@@ -31,5 +28,4 @@ public final class StatementGeneratorFactory {
     public static CountStarStatementGenerator countStarFrom(final String tableName) {
         return new CountStarStatementGenerator(tableName);
     }
-
 }
