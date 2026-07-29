@@ -68,8 +68,7 @@ public final class SchemaConverter {
                 return column.isSigned() ? DataTypes.IntegerType : DataTypes.LongType;
             case Types.BIGINT:
                 return column.isSigned() ? DataTypes.LongType : DataTypes.createDecimalType(20, 0);
-            case Types.DECIMAL:
-            case Types.NUMERIC:
+            case Types.DECIMAL, Types.NUMERIC:
                 if (column.getPrecision() != 0 || column.getScale() != 0) {
                     return createDecimalDataType(column.getPrecision(), column.getScale());
                 } else {
