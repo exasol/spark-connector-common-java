@@ -24,6 +24,13 @@ public final class FilterConverter {
     private static final Map<Class<? extends Filter>, OperationType> FILTERS = getMappings();
 
     /**
+     * Creates a filter converter.
+     */
+    public FilterConverter() {
+        // Empty by design.
+    }
+
+    /**
      * Converts an array of Spark {@link Filter} conditions into Exasol SQL expression.
      *
      * The function returns {@link Optional#empty()} if any of the filters cannot be converted into Exasol where clause.

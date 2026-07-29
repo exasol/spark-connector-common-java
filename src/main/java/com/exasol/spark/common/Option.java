@@ -103,6 +103,8 @@ public enum Option {
     }
 
     /**
+     * Gets the option's configuration key.
+     *
      * @return key of the current option
      */
     public String key() {

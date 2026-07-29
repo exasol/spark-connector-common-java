@@ -6,6 +6,13 @@ package com.exasol.spark.common;
 public final class StatementGeneratorFactory {
 
     /**
+     * Creates a statement generator factory.
+     */
+    public StatementGeneratorFactory() {
+        // Empty by design.
+    }
+
+    /**
      * Creates a {@link SelectStatementGenerator} instance.
      *
      * @param tableName name of the table from which to select data

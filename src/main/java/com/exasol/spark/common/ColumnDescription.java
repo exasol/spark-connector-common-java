@@ -96,6 +96,10 @@ public class ColumnDescription {
         private boolean isSigned = false;
         private boolean isNullable = false;
 
+        private Builder() {
+            // Empty by design.
+        }
+
         /**
          * Sets the column name.
          *

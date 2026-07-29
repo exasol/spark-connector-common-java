@@ -13,25 +13,65 @@ import com.exasol.errorreporting.ExaError;
 public final class ExasolOptions implements Serializable {
     private static final long serialVersionUID = 3223251912933850463L;
 
-    /** JDBC URL parameter. */
+    /**
+     * JDBC URL parameter.
+     *
+     * @serial JDBC connection URL.
+     */
     private final String jdbcUrl;
-    /** Host parameter. */
+    /**
+     * Host parameter.
+     *
+     * @serial JDBC connection host.
+     */
     private final String host;
-    /** Port parameter. */
+    /**
+     * Port parameter.
+     *
+     * @serial JDBC connection port.
+     */
     private final String port;
-    /** Fingerprint parameter. */
+    /**
+     * Fingerprint parameter.
+     *
+     * @serial JDBC connection certificate fingerprint.
+     */
     private final String fingerprint;
-    /** Username parameter. */
+    /**
+     * Username parameter.
+     *
+     * @serial JDBC connection username.
+     */
     private final String username;
-    /** Password parameter. */
+    /**
+     * Password parameter.
+     *
+     * @serial JDBC connection password.
+     */
     private final String password;
-    /** Table parameter. */
+    /**
+     * Table parameter.
+     *
+     * @serial Exasol table name.
+     */
     private final String table;
-    /** Query parameter. */
+    /**
+     * Query parameter.
+     *
+     * @serial Exasol query.
+     */
     private final String query;
-    /** S3 Bucket parameter. */
+    /**
+     * S3 Bucket parameter.
+     *
+     * @serial S3 bucket name.
+     */
     private final String s3Bucket;
-    /** Additional key-value map. */
+    /**
+     * Additional key-value map.
+     *
+     * @serial Additional connector options.
+     */
     private final HashMap<String, String> optionsMap;
 
     private ExasolOptions(final Builder builder) {
@@ -367,6 +407,13 @@ public final class ExasolOptions implements Serializable {
         private String query = null;
         private String s3Bucket = null;
         private HashMap<String, String> optionsMap = new HashMap<>(0);
+
+        /**
+         * Creates an Exasol options builder with default values.
+         */
+        private Builder() {
+            // Empty by design.
+        }
 
         /**
          * Sets the connection host address.

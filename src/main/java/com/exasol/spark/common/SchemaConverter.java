@@ -18,6 +18,13 @@ import org.apache.spark.sql.types.StructType;
 public final class SchemaConverter {
 
     /**
+     * Creates a schema converter.
+     */
+    public SchemaConverter() {
+        // Empty by design.
+    }
+
+    /**
      * Converts a list of column descriptions to Spark {@link StructType}.
      *
      * @param columns list of column descriptions
