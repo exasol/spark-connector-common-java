@@ -3,20 +3,18 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>spark-connector-common-java</artifactId>
-    <version>3.0.1</version>
+    <version>4.0.0</version>
     <name>spark-connector-common-java</name>
     <description>An Exasol common library for Apache Spark connectors</description>
     <url>https://github.com/exasol/spark-connector-common-java/</url>
     <parent>
         <artifactId>spark-connector-common-java-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>3.0.1</version>
+        <version>4.0.0</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
     <properties>
-        <java.version>11</java.version>
-        <!-- Version 4 requires Java 17 -->
-        <spark.version>4.2.0-preview5</spark.version>
+        <java.version>17</java.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -82,7 +80,7 @@
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.13</artifactId>
-            <version>${spark.version}</version>
+            <version>4.2.0-preview5</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -165,7 +163,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.14.4</version>
+            <version>6.1.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -183,19 +181,19 @@
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>exasol-testcontainers</artifactId>
-            <version>7.3.0</version>
+            <version>8.0.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>test-db-builder-java</artifactId>
-            <version>4.0.1</version>
+            <version>4.0.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>hamcrest-resultset-matcher</artifactId>
-            <version>1.7.2</version>
+            <version>1.7.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -207,8 +205,7 @@
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <!-- Version 4 requires Java 17 -->
-            <version>3.19.4</version>
+            <version>4.5</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
