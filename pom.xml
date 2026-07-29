@@ -17,9 +17,6 @@
         <java.version>11</java.version>
         <!-- Version 4 requires Java 17 -->
         <spark.version>4.2.0-preview5</spark.version>
-        <!-- Version 6 requires Java 17 -->
-        <junit.version>6.1.2</junit.version>
-        <mockito.version>5.23.0</mockito.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -161,26 +158,14 @@
         <!-- Test Dependencies -->
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
+            <version>5.23.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.version}</version>
+            <version>5.14.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -223,7 +208,7 @@
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
             <!-- Version 4 requires Java 17 -->
-            <version>4.5</version>
+            <version>3.19.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
