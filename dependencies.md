@@ -11,7 +11,7 @@
 | [Spark Project SQL][6]            | [Apache-2.0][7]                                |
 | [aircompressor][8]                | [Apache License 2.0][7]                        |
 | [LZ4 Java Compression][9]         | [Apache License, Version 2.0][10]              |
-| [Scala Library][11]               | [Apache-2.0][10]                               |
+| [scala-library-bootstrapped][11]  | [Apache-2.0][10]                               |
 | [Apache Ivy][12]                  | [The Apache Software License, Version 2.0][13] |
 | [Apache ZooKeeper - Server][14]   | [Apache License, Version 2.0][15]              |
 | [Apache Avro][16]                 | [Apache-2.0][15]                               |
@@ -75,7 +75,7 @@
 [8]: https://github.com/airlift/aircompressor
 [9]: https://github.com/yawkat/lz4-java
 [10]: https://www.apache.org/licenses/LICENSE-2.0
-[11]: https://www.scala-lang.org/
+[11]: https://scala-lang.org/
 [12]: http://ant.apache.org/ivy/
 [13]: http://www.apache.org/licenses/LICENSE-2.0.txt
 [14]: http://zookeeper.apache.org/zookeeper
