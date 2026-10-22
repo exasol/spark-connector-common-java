@@ -65,7 +65,7 @@
 | [Apache Maven Site Plugin][71]                          | [Apache-2.0][15]                               |
 
 [0]: https://www.exasol.com/
-[1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/26.2.8/exasol-jdbc-26.2.8-license.txt
+[1]: https://repo1.maven.org/maven2/com/exasol/exasol-jdbc/26.2.10/exasol-jdbc-26.2.10-license.txt
 [2]: https://github.com/exasol/sql-statement-builder/
 [3]: https://github.com/exasol/sql-statement-builder/blob/main/LICENSE
 [4]: https://github.com/exasol/error-reporting-java/
