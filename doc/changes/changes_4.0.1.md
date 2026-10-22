@@ -1,12 +1,10 @@
-# Spark Connector Common Java 4.0.1, released 2026-??-??
+# Spark Connector Common Java 4.0.1, released 2026-10-22
 
-Code name:
+Code name: Fixed Many Vulnerabilities in Dependencies
 
 ## Summary
 
-## Features
-
-* ISSUE_NUMBER: description
+This release updates direct and transitive dependencies to address the vulnerabilities listed in the Security section.
 
 ## Security
 
