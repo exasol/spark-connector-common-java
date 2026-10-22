@@ -74,6 +74,36 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <!-- From spark-sql_2.13; upgrade fixes CVE-2026-15432. -->
+                <groupId>com.google.crypto.tink</groupId>
+                <artifactId>tink</artifactId>
+                <version>1.22.0</version>
+            </dependency>
+            <dependency>
+                <!-- From spark-sql_2.13; upgrade fixes CVE-2026-102495 and CVE-2026-102496. -->
+                <groupId>org.apache.ws.xmlschema</groupId>
+                <artifactId>xmlschema-core</artifactId>
+                <version>2.3.3</version>
+            </dependency>
+            <dependency>
+                <!-- From spark-sql_2.13; upgrade fixes CVE-2026-108104, CVE-2026-108106, CVE-2026-90559, CVE-2026-93451, and CVE-2026-93452. -->
+                <groupId>org.xerial.snappy</groupId>
+                <artifactId>snappy-java</artifactId>
+                <version>1.1.10.10</version>
+            </dependency>
+            <dependency>
+                <!-- From spark-sql_2.13; upgrade fixes CVE-2026-87795, CVE-2026-87823, and CVE-2026-89045. -->
+                <groupId>com.github.luben</groupId>
+                <artifactId>zstd-jni</artifactId>
+                <version>1.5.7-14</version>
+            </dependency>
+            <dependency>
+                <!-- From spark-sql_2.13; upgrade fixes CVE-2026-73334. -->
+                <groupId>org.apache.parquet</groupId>
+                <artifactId>parquet-hadoop</artifactId>
+                <version>1.18.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
